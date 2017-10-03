@@ -33,6 +33,7 @@
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
+  
   "devDependencies": {
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
