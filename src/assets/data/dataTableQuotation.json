@@ -1,0 +1,515 @@
+{
+  "step1Data": {
+    "carTypeDropdown":{
+      "dropdownName": "carTypeDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Passenger"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseManufacturerDropdown":{
+      "dropdownName": "chooseManufacturerDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Chevrolet"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseModelDropdown":{
+      "dropdownName": "chooseModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Cruze"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseVariantDropdown":{
+      "dropdownName": "chooseVariantDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "A7x i173"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "vehiclePriceDropdown":{
+      "dropdownName": "vehiclePriceDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "20,750"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "carTypeUsedDropdown":{
+      "dropdownName": "carTypeUsedDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Passenger"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseManufacturerUsedDropdown":{
+      "dropdownName": "chooseManufacturerUsedDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Chevrolet"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseModelUsedDropdown":{
+      "dropdownName": "chooseModelUsedDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Cruze"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "chooseVariantUsedDropdown":{
+      "dropdownName": "chooseVariantUsedDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "A7x i173"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "vehiclePriceUsedDropdown":{
+      "dropdownName": "vehiclePriceUsedDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "20,750"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    }
+  },
+  "step2Data": {
+    "carName": "Chevrolet Cruze",
+    "price": "20,750.00",
+    "planSelection": "planSelection",
+    "planSelectionModel": "plan2",
+    "planTable": [
+      {
+        "id": "plan1",
+        "selected": false,
+        "name": "REGULAR PLAN",
+        "totalDeposit": 30,
+        "monthlyPayment": 546.82,
+        "term": 48
+      },
+      {
+        "id": "plan2",
+        "selected": true,
+        "name": "SUBSIDIZED PLAN",
+        "totalDeposit": 30,
+        "monthlyPayment": 546.82,
+        "term": 48
+      },
+      {
+        "id": "plan3",
+        "selected": false,
+        "name": "SMARTBUY PLAN",
+        "totalDeposit": 30,
+        "monthlyPayment": 546.82,
+        "term": 48
+      },
+      {
+        "id": "plan4",
+        "selected": false,
+        "name": "PREMIUM PLAN",
+        "totalDeposit": 30,
+        "monthlyPayment": 546.82,
+        "term": 48
+      }
+    ]
+  },
+  "step3Data": {
+    "status": "Pre-Approved",
+    "carName": "Chevrolet Cruze",
+    "price": "20,750.00",
+    "Monthly Regular Payment": "10,000",
+    "Expected Maximum Monthly Payment": "11,000",
+    "Monthly Regular Rent": "1.5",
+    "First Payment Date": "9/12/2017",
+    "Customer rate": "12",
+    "CAT": "13",
+    "Subsidy - Percentage": "0",
+    "Other Terms": [
+      {
+        "number": "12",
+        "price": "325,838"
+      },
+      {
+        "number": "24",
+        "price": "325,838"
+      },
+      {
+        "number": "48",
+        "price": "325,838"
+      },
+      {
+        "number": "60",
+        "price": "325,838"
+      },
+      {
+        "number": "72",
+        "price": "325,838"
+      }
+    ]
+  },
+  "step3DataForm": {
+    "DateModelDropdown":{
+      "dropdownName": "DateModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "11 / 09 / 2017"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CustomerTypeModelDropdown":{
+      "dropdownName": "CustomerTypeModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Persona Fisica"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CustomerTypeModalModelDropdown":{
+      "dropdownName": "CustomerTypeModalModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Persona Fisica"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SubCustomerTypeModelDropdown":{
+      "dropdownName": "SubCustomerTypeModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Sub Persona Fisica"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "typeRadioSelection": "typeRadioSelection",
+    "typeRadioSelectionModel": "type1",
+    "typeRadioList": [
+      {
+        "id": "type1",
+        "name": "New"
+      },
+      {
+        "id": "type2",
+        "name": "Semi New / Used"
+      }
+    ],
+    "ModelYearModelDropdown":{
+      "dropdownName": "ModelYearModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "2014"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "MakeModelDropdown":{
+      "dropdownName": "MakeTypeModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Chevrolet"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CategoryModelDropdown":{
+      "dropdownName": "CategoryModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Package B"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "VehicleUsageModelDropdown":{
+      "dropdownName": "VehicleUsageModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Passengers"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "PlanDetailsModelDropdown":{
+      "dropdownName": "PlanDetailsModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Employes HB LT"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "Model": "Curze",
+    "Term": "24",
+    "Selling Price": "19.350",
+    "Plans": "HB LT AC 2.0D",
+    "modalAllCheckBoxModelId": "modalAllCheckBox",
+    "modalAllCheckBoxModelChecked": true,
+    "modalAllCheckBoxModelName": "All",
+    "plansAllCheckBoxModelId": "plansAllCheckBox",
+    "plansAllCheckBoxModelChecked": true,
+    "plansAllCheckBoxModelName": "All",
+    "FixedRateCheckBoxModelId": "FixedRateCheckBox",
+    "FixedRateCheckBoxModelChecked": true,
+    "FixedRateCheckBoxModelName": "Fixed rate",
+    "WithResourceCheckBoxModelId": "WithResourceCheckBox",
+    "WithResourceCheckBoxModelChecked": true,
+    "WithResourceCheckBoxModelName": "With Resource",
+    "FleetCheckBoxModelId": "FleetCheckBox",
+    "FleetCheckBoxModelChecked": true,
+    "FleetCheckBoxModelName": "Fleet",
+    "checkBoxList": [
+      {
+        "name": "Car Insurance",
+        "checked": false,
+        "disabled": true,
+        "required": true,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Qualitas",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Life Insurance ($)",
+        "checked": false,
+        "disabled": true,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Metlife",
+        "inputBoxLeft": "",
+        "inputBoxRight": "120,343"
+      },
+      {
+        "name": "Unemployed Insurance",
+        "checked": false,
+        "disabled": true,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Metlife",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Fee (when it's not direct debit)",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "GAP",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": false,
+        "inputBox": "BNP Paribas",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Extended Warranty",
+        "checked": true,
+        "disabled": false,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "ABA",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Parts and Accessories",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "OnStar",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Other amount",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Opening Fee",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      }
+    ],
+    "totalAmountLeft": "120,343",
+    "totalAmountRight": "120,343",
+    "Security Deposit (Quantity)": "120,000",
+    "1st Extraordinary Payment (Percentage)": "60,000",
+    "Residual Value": "43,000",
+    "1st Extraordinary Payment (Value)": "120,000",
+    "Security Deposit (Value)": "Plan 1"
+  }
+}

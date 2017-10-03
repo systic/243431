@@ -1,0 +1,642 @@
+<app-sd-header data-ActiveMenu="CreateQuotation" [ElementGroup]="hiddenElementGroup" (click)="clickBody()"></app-sd-header>
+<div class="contents" (click)="clickBody()">
+  <div class="section section-quotaion">
+    <div class="top-bar">
+      <div class="back-link">
+        <a [routerLink]="['/']" class="icons-icon-backs"></a>
+        <a [routerLink]="['/']" class="link-txt">Cancel Creating Quotation</a>
+      </div>
+    </div>
+    <!-- end .top-bar -->
+    
+    <div class="quotation-step-content">
+      <div class="item quotation-step-one"
+           [ngClass]="{'no-choose': ( step1Data.chooseModelDropdown !== undefined ? (step1Data.chooseModelDropdown.defaultText === 'Select' || step1Data.chooseVariantDropdown.defaultText === 'Select') : false)
+           && ( step1Data.chooseModelUsedDropdown !== undefined ? (step1Data.chooseModelUsedDropdown.defaultText === 'Select' || step1Data.chooseVariantUsedDropdown.defaultText === 'Select') : false), hide: step !== 0}">
+        <div class="title-bar">
+          <h4 class="titles">01. Vehicle selection</h4>
+        </div>
+        <!-- end .title-bar -->
+        <div class="tab-new clearfix">
+          <ul>
+            <li [ngClass]="{current: step1Tab === 0}" (click)="step1Tab = 0"><a href="javascript:;">New</a></li>
+            <li [ngClass]="{current: step1Tab === 1}" (click)="step1Tab = 1"><a href="javascript:;">Used</a></li>
+          </ul>
+        </div>
+        <!-- end .tab-new -->
+        <div class="step-boxs clearfix">
+          <div class="left-car">
+            <div class="car-img">
+              <img src="../../assets/i/02-quotation-step-0@2x.jpg" alt="img" class="step-zero hide">
+              <img src="../../assets/i/cruze-sedan@2x.jpg" alt="img" class="step-one ">
+            </div>
+            <div class="name-price name-one">
+              <div class="blue-txt">Choose a Car</div>
+              <span class="gray-txt">Models may differ from images shown</span>
+            </div>
+            <div class="name-price name-two">
+              <span class="blue-txt">Chevrolet Cruze :</span>
+              <span class="gray-txt">$20,750.00</span>
+            </div>
+          </div>
+          <div class="right-form" [ngClass]="{hide: step1Tab !== 0}">
+            <div class="form-row">
+              <div class="title">Car Type <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.carTypeDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose manufacturer<span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseManufacturerDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose a model <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseModelDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose a variant <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseVariantDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Vehicle Price($) <span class="red">*</span></div>
+              <span class="inputs">
+                <input type="text">
+              </span>
+              <!-- end .input -->
+            </div>
+            <!-- end .form-row -->
+          </div>
+          <div class="right-form" [ngClass]="{hide: step1Tab !== 1}">
+            <div class="form-row">
+              <div class="title">Car Type <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.carTypeUsedDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose manufacturer<span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseManufacturerUsedDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose a model <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseModelUsedDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Choose a variant <span class="red">*</span></div>
+              <app-sd-dropdown [DropdownData]="step1Data.chooseVariantUsedDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              <!-- end .dropdown-default -->
+            </div>
+            <!-- end .form-row -->
+            <div class="form-row">
+              <div class="title">Vehicle Price($) <span class="red">*</span></div>
+              <span class="inputs">
+                <input type="text">
+              </span>
+              <!-- end .input -->
+            </div>
+            <!-- end .form-row -->
+          </div>
+        </div>
+        <!-- end .step-boxs -->
+        <div class="btn-group-row clearfix">
+          <a href="javascript:;" class="btn btn-green btn-previous disabled"><i class="icon-pre"></i>Previous</a>
+          <a href="javascript:;" class="btn btn-green btn-next" (click)="changeStep(1)">Next<i class="icon-next"></i></a>
+        </div>
+        <!-- end .btn-group -->
+      </div>
+      <!-- end .quotation-step-one -->
+
+      <div class="item quotation-step-two" [ngClass]="{hide: step !== 1}">
+        <div class="title-bar">
+          <h4 class="titles">02. Select Plan Proposal</h4>
+        </div>
+        <!-- end .title-bar -->
+        <div class="step-boxs clearfix">
+          <div class="left-car">
+            <div class="car-img">
+              <img src="../../assets/i/cruze-sedan@2x.jpg" alt="img" class="step-one mt70">
+            </div>
+            <div class="name-price">
+              <span class="blue-txt">{{step2Data.carName}} :</span>
+              <span class="gray-txt">${{step2Data.price}}</span>
+            </div>
+          </div>
+          <div class="right-form">
+            <div class="select-table">
+              <div class="row" *ngFor="let item of step2Data.planTable">
+                <div class="col-cell width34">
+                  <div class="spacing">
+                    <div class="radio-wrap">
+                      <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                             name="{{step2Data.planSelection}}" [(ngModel)]="step2Data.planSelectionModel">
+                      <label for="{{item.id}}" class="blue-plan-label">{{item.name}}</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-cell  width18">
+                  <div class="spacing">
+                    <div class="top-txt">
+                      Total Deposit
+                    </div>
+                    <div class="values">
+                      {{item.totalDeposit}}%
+                    </div>
+                  </div>
+                </div>
+                <div class="col-cell width25">
+                  <div class="spacing">
+                    <div class="top-txt">
+                      Monthly Payment
+                    </div>
+                    <div class="values">
+                      <span class="top-left">$</span>
+                      {{item.monthlyPayment}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-cell">
+                  <div class="spacing">
+                    <div class="top-txt">
+                      TERM
+                    </div>
+                    <div class="values">
+                      {{item.term}}
+                      <span class="top-right">MO</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end .row -->
+            </div>
+            
+          </div>
+        </div>
+        <!-- end .step-boxs -->
+        <div class="btn-group-row clearfix">
+          <a href="javascript:;" class="btn btn-green btn-previous" (click)="changeStep(0)"><i class="icon-pre"> </i>Previous</a>
+          <a href="javascript:;" class="btn btn-green btn-next" (click)="changeStep(2)">Next <i class="icon-next"></i></a>
+        </div>
+        <!-- end .btn-group -->
+      </div>
+      <!-- end .quotation-step-two -->
+      
+      <div class="item quotation-step-three" [ngClass]="{hide: step !== 2}">
+        <div class="title-bar">
+          <span class="right-txt">Status: <span class="status">{{step3Data.status}}</span></span>
+          <h4 class="titles">03. Get Quote and Modify</h4>
+        </div>
+        <!-- end .title-bar -->
+        <div class="step-boxs clearfix">
+          <div class="left-car">
+            <div class="car-img">
+              <img src="../../assets/i/cruze-sedan@2x.jpg" alt="img" class="step-one">
+            </div>
+            <div class="name-price">
+              <span class="blue-txt">{{step3Data.carName}} :</span>
+              <span class="gray-txt">${{step3Data.price}}</span>
+            </div>
+            <div class="result-boxs blue-bg">
+              <div class="titles">Results from the calculation</div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Monthly Regular Payment:
+                </div>
+                <div class="col-right">
+                  $ {{step3Data['Monthly Regular Payment']}}
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Expected Maximum Monthly
+                </div>
+                <div class="col-right">
+                  
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Payment:
+                </div>
+                <div class="col-right">
+                  $ {{step3Data['Expected Maximum Monthly Payment']}}
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Monthly Regular Rent:
+                </div>
+                <div class="col-right">
+                  {{step3Data['Monthly Regular Rent']}}%
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  First Payment Date:
+                </div>
+                <div class="col-right">
+                  {{step3Data['First Payment Date']}}
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Customer rate:
+                </div>
+                <div class="col-right">
+                  {{step3Data['Customer rate']}}%
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  CAT:
+                </div>
+                <div class="col-right">
+                  {{step3Data['CAT']}}%
+                </div>
+              </div>
+              <div class="row clearfix">
+                <div class="col-left">
+                  Subsidy - Percentage:
+                </div>
+                <div class="col-right">
+                  {{step3Data['Subsidy - Percentage']}}%
+                </div>
+              </div>
+            </div>
+            <!-- end .result-boxs -->
+            <div class="result-boxs">
+              <div class="titles terms-label">Other Terms</div>
+              <div class="row clearfix" *ngFor="let item of step3Data['Other Terms']">
+                <div class="col-left">
+                  {{item.number}}
+                </div>
+                <div class="col-right">
+                  $ {{item.price}}
+                </div>
+              </div>
+            </div>
+            <!-- end .result-boxs -->
+          </div>
+          <!-- end .left-car -->
+
+          <div class="right-form quation-section">
+            <div class="step">
+
+              <div class="step-section" [ngClass]="{open: !generalOpen}">
+                <div class="title"><a href="javascript:;" class="btn-status" (click)="generalOpen = !generalOpen"></a>General</div>
+                <ul class="quation-items clearfix">
+                  <li>
+                    <label>Date</label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['DateModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label>Customer Type</label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['CustomerTypeModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label><em></em></label>
+                    <div class="group">
+                      <div class="radio-wrap" *ngFor="let item of step3DataForm.typeRadioList">
+                        <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                             name="{{step3DataForm.typeRadioSelection}}" [(ngModel)]="step3DataForm.typeRadioSelectionModel">
+                        <label for="{{item.id}}">{{item.name}}</label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!--end .quation-items-->
+              </div>
+              <!--end .step-section-->
+
+
+              <div class="step-section" [ngClass]="{open: !carDetailsOpen}">
+                <div class="title"><a href="javascript:;" class="btn-status" (click)="carDetailsOpen = !carDetailsOpen"></a>Car Details</div>
+                <ul class="quation-items clearfix">
+                  <li>
+                      <label>Model Year <em>*</em></label>
+                      <app-sd-dropdown [DropdownData]="step3DataForm['ModelYearModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label>Make <em>*</em></label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['MakeModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label>Model <em>*</em></label>
+                    <span class="inputs mr30">
+                        <input type="text" [(ngModel)]="step3DataForm['Model']">
+                    </span>
+                    <div class="checkbox-wrap after-input">                     
+                      <input type="checkbox" id="{{step3DataForm['modalAllCheckBoxModelId']}}" [(ngModel)]="step3DataForm['modalAllCheckBoxModelChecked']">
+                      <label for="{{step3DataForm['modalAllCheckBoxModelId']}}">{{step3DataForm['modalAllCheckBoxModelName']}}</label>
+                    </div>
+                  </li>
+                  <li>
+                    <label>Category <em>*</em></label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['CategoryModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label>Term <em>*</em></label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step3DataForm['Term']">
+                    </span>
+                  </li>
+                  <li>
+                    <label>Selling Price <em>*</em></label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step3DataForm['Selling Price']">
+                    </span>
+                  </li>
+                  <li>
+                    <label>Vehicle usage <em>*</em></label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['VehicleUsageModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <label>Plans <em>*</em></label>
+                    <span class="inputs mr30">
+                        <input type="text" [(ngModel)]="step3DataForm['Plans']">
+                    </span>
+                    <div class="checkbox-wrap after-input">
+                      <input type="checkbox" id="{{step3DataForm['plansAllCheckBoxModelId']}}" [(ngModel)]="step3DataForm['plansAllCheckBoxModelChecked']">
+                      <label for="{{step3DataForm['plansAllCheckBoxModelId']}}">{{step3DataForm['plansAllCheckBoxModelName']}}</label>
+                    </div>
+                  </li>
+                  <li>
+                    <label>Plan Details<em>*</em></label>
+                    <app-sd-dropdown [DropdownData]="step3DataForm['PlanDetailsModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                  </li>
+                  <li>
+                    <div class="group">
+                      <div class="checkbox-wrap">
+                        <input type="checkbox" id="{{step3DataForm['FixedRateCheckBoxModelId']}}" [(ngModel)]="step3DataForm['FixedRateCheckBoxModelChecked']">
+                        <label for="{{step3DataForm['FixedRateCheckBoxModelId']}}">{{step3DataForm['FixedRateCheckBoxModelName']}}</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="group">
+                      <div class="checkbox-wrap">
+                        <input type="checkbox" id="{{step3DataForm['WithResourceCheckBoxModelId']}}" [(ngModel)]="step3DataForm['WithResourceCheckBoxModelChecked']">
+                        <label for="{{step3DataForm['WithResourceCheckBoxModelId']}}">{{step3DataForm['WithResourceCheckBoxModelName']}}</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="group">
+                      <div class="checkbox-wrap">
+                        <input type="checkbox" id="{{step3DataForm['FleetCheckBoxModelId']}}" [(ngModel)]="step3DataForm['FleetCheckBoxModelChecked']">
+                        <label for="{{step3DataForm['FleetCheckBoxModelId']}}">{{step3DataForm['FleetCheckBoxModelName']}}</label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!--end .quation-items-->
+              </div>
+              <!--end .step-section-->
+
+              <div class="step-section" [ngClass]="{open: !vapsAndFeesOpen}">
+                <div class="title"><a href="javascript:;" class="btn-status" (click)="vapsAndFeesOpen = !vapsAndFeesOpen"></a>VAPs and Fees</div>
+                <div class="quation-items clearfix">
+                  <div class="vaps-contents clearfix">
+                    <div class="col left-boxs vap-items clearfix">
+                      <ul>
+                        <li *ngFor="let item of step3DataForm.checkBoxList">
+                          <div class="checkbox-wrap" [ngClass]="{disabled: item.disabled}">
+                            <input type="checkbox" id="{{item.name + 'VAPsAndFees'}}" [disabled]="item.disabled" [(ngModel)]="item.checked">
+                            <label for="{{item.name + 'VAPsAndFees'}}">{{item.name}} <em [ngClass]="{hide: !item.required}">*</em></label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- end .check-group -->
+                        
+                    <div class="col center-boxs">
+                        <ul>
+                          <li *ngFor="let item of step3DataForm.checkBoxList" [ngClass]="{'no-add-btn': !item.showAddBtn}">
+                            <div [ngClass]="{hide: !item.showInputBox}">
+                              <input type="text" class="control-input" [(ngModel)]="item.inputBox"/>
+                              <a href="javascript:;" class="add-btn" [ngClass]="{hide: !item.showAddBtn}">
+                                <span>+</span>
+                              </a>
+                            </div>
+                          </li>       
+                        </ul>
+                    </div>
+                    <!-- end .col -->
+                    <div class="col right-boxs">
+                      <div class="vap-items clearfix">
+                        <div class="row clearfix" *ngFor="let item of step3DataForm.checkBoxList">
+                          <span class="inputs  width40">
+                            <input type="text" [(ngModel)]="item.inputBoxLeft" [disabled]="item.inputBoxLeft === ''">
+                          </span>
+                          <span [ngClass]="{'arrow-right': (item.inputBoxLeft !== ''),'arrow-left': (item.inputBoxRight !== '')}"
+                                (click)="clickArrow(item)">
+                            <i></i>
+                          </span>
+                          <span class="inputs  width40">
+                            <input type="text" [(ngModel)]="item.inputBoxRight" [disabled]="item.inputBoxRight === ''">
+                          </span>
+                        </div>
+                        <!-- end .row -->
+                        <div class="row clearfix">
+                          <div class="vap-total">
+                            <div class="total-amout">Total Amount</div>
+                            <span class="margin-right">{{step3DataForm['totalAmountLeft']}}</span>
+                            <span>{{step3DataForm['totalAmountRight']}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end .col -->
+                  </div>
+                  <!-- end .vaps-contents -->
+                  <div class="bottom-form">
+                    <ul class="clearfix">
+                      <li>
+                        <label>Security Deposit (Quantity)</label>
+                          <span class="inputs">
+                              <input type="text" [(ngModel)]="step3DataForm['Security Deposit (Quantity)']">
+                          </span>
+                      </li>
+                      <li>
+                        <label>1st Extraordinary Payment (Percentage)</label>
+                          <span class="inputs">
+                              <input type="text" [(ngModel)]="step3DataForm['1st Extraordinary Payment (Percentage)']">
+                          </span>
+                      </li>
+                      <li>
+                        <label>Residual Value</label>
+                          <span class="inputs">
+                              <input type="text" [(ngModel)]="step3DataForm['Residual Value']">
+                          </span>
+                      </li>
+                      <li>
+                        <label>1st Extraordinary Payment (Value)</label>
+                          <span class="inputs">
+                              <input type="text" [(ngModel)]="step3DataForm['1st Extraordinary Payment (Value)']">
+                          </span>
+                      </li>
+                      <li>
+                        <label>Security Deposit (Value)</label>
+                          <span class="inputs">
+                              <input type="text" [(ngModel)]="step3DataForm['Security Deposit (Value)']">
+                          </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!--end .quation-items-->
+              </div>
+              <!--end .step-section-->
+            </div>
+            <!--end .step-->
+          </div>
+        </div>
+        <!-- end .step-boxs -->
+        <div class="btn-group-row clearfix">
+          <a href="javascript:;" class="btn btn-green btn-previous" (click)="changeStep(1)"><i class="icon-pre"> </i>Previous</a>
+          <div class="right-btn">
+            <a href="javascript:;" class="btn btn-gray width135">Print</a>
+            <a href="javascript:;" class="btn btn-gray width120">Email</a>
+            <a href="javascript:;" class="btn btn-gray width131">Save</a>
+            <a href="javascript:;" class="btn btn-gray width149">Amortization table</a>
+            <a href="javascript:;" class="btn btn-gray width140">Paymente Schedule</a>
+            <a href="javascript:;" class="btn btn-gray width131"
+               (click)="openModalWindow('modal-pre-approval')">PreApproval</a>
+            <a href="javascript:;" class="btn btn-gray width131">Full Application</a>
+          </div>
+        </div>
+        <!-- end .btn-group -->
+      </div>
+      <!-- end .quotation-step-three -->
+    </div>
+    <!-- end .quotation-step-content -->
+  </div>
+</div>
+<!-- end .contents -->
+<div class="modal-backdrop in" [ngClass]="{hide: !showModal}"></div>
+<div class="modal modal-default modal-quotation" (click)="closeModalWindow()"
+ [ngClass]="{hide: !(showModal && shownModalName === 'modal-pre-approval') }">
+  <div class="modal-dialog" (click)="$event.stopPropagation();">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Please complete this customer details from first.</h4>
+        <a href="javascript:;" class="icon-close" (click)="closeModalWindow()"></a>
+      </div>
+      <!-- end .modal-header -->
+      <div class="modal-body">
+        <div class="first">
+          <div class="use-customer clearfix">
+            <div class="left-area">
+              <h4 class="blue-txt">Use Customer Data from Pre-Approval</h4>
+              <p class="gray-txt">Search existing customer data</p>
+            </div>
+            <div class="right-search ">
+              <div class="search-boxs">
+                <div class="search">
+                  <span class="inputs">
+                    <a href="javascript:;" class="icon-search"></a>
+                    <input type="search" [(ngModel)]="typeName" placeholder="Type name or Pre-Approval ID">
+                  </span>
+                </div>
+                <!-- end .search -->
+              </div>
+              <!-- end .search-boxs -->
+              <a href="javascript:;" class="btn-circle btn-blue" [ngClass]="{disabled: typeName === ''}">Accept</a>
+            </div>
+            <!-- end .right-search -->
+          </div>
+        </div>
+        <!-- end .first -->
+        <div class="create-boxs">
+          <div class="top-line">
+            <h4 class="blue-txt">Create New Customer</h4>
+            <p class="gray-txt">Manual input Add new Customer</p>
+          </div>
+          <div class="pro-items">
+            <ul class="quation-items clearfix">
+              <li>
+                <label>First Name <em>*</em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Middle Name <em></em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Last Name1 <em></em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Last Name2 <em></em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Customer Type<em>*</em></label>
+                <app-sd-dropdown [DropdownData]="step3DataForm['CustomerTypeModalModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              </li>
+              <li>
+                <label>TAX ID<em>*</em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Email Address <em>*</em></label>
+                <span class="inputs">
+                    <input type="email">
+                </span>
+              </li>
+              <li>
+                <label>Contact Phone<em>*</em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+              <li>
+                <label>Sub Customer Type <em>*</em></label>
+                <app-sd-dropdown [DropdownData]="step3DataForm['SubCustomerTypeModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+              </li>
+              <li>
+                <label>Income($) <em>*</em></label>
+                <span class="inputs">
+                    <input type="text">
+                </span>
+              </li>
+            </ul>
+            <!--end .quation-items-->
+          </div>
+        </div>
+      </div>
+      <!-- end .modal-body -->
+      <div class="modal-footer clearfix">
+        <div class="btn-wrap">
+          <a href="javascript:;" class="btn-circle btn-gray" (click)="closeModalWindow()">Cancel</a>
+          <a [routerLink]="['/editApplication']" class="btn-circle btn-blue">Accept</a>
+        </div>
+        
+      </div>
+      <!-- end .modal-footer -->
+    </div>
+    <!-- .modal-content -->
+  </div>
+  <!-- .modal-dialog -->
+</div>
+<!-- #modal-demo -->

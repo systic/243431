@@ -1,0 +1,65 @@
+<header class="header">
+  <div class="lefts">
+    <a [routerLink]="['/']" class="btn-logo">
+      <img src="./assets/i/logo.svg" alt="logo">
+    </a>
+    <nav class="nav-tab">
+      <ul>
+        <li [ngClass]="{current: ActiveMenu === 'Dashboard'}">
+          <a [routerLink]="['/']">
+            <i class="icon-my"></i>
+            My Dashboard
+          </a>
+        </li>
+        <li [ngClass]="{current: ActiveMenu === 'CreateQuotation'}">
+          <a [routerLink]="['/quotation']">
+            <i class="icon-quotation"></i>
+            Create Quotation
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- end .lefts -->
+  <div class="rights">
+    <a href="javascript:;" class="icon-search"></a>
+    <div class="user-info">
+      <ul>
+        <li>
+          <a href="javascript:;">
+            <span class="name">Dealer Name</span>
+            <span class="location"><i class="icon-location"></i>Location</span>
+          </a>
+        </li>
+        <li (click)="openPopup('profile-menu');$event.stopPropagation();"
+             [ngClass]="{active: (ElementGroup['showPopup'] && ElementGroup['shownPopupName'] === 'profile-menu') }">
+          <div class="updown">
+            <div class="btn-top">
+              <a href="javascript:;" class="left-area">
+                <span class="abel-txt">Abner Abel</span>
+                <span class="manager-txt">Dealer Group Manager</span>
+              </a>
+              <a href="javascript:;" class="icon-down"></a>
+            </div>
+            <div class="profile-menu"
+                      (click)="$event.stopPropagation();"> 
+              <a href="javascript:;" class="item">
+                <i class="icon-help"></i>
+                <span class="txt">Help</span>
+              </a>
+              <a [routerLink]="['/contact']" class="item">
+                <i class="icon-contact"></i>
+                <span class="txt">Contact</span>
+              </a>
+               <a href="javascript:;" class="item">
+                <i class="icon-log"></i>
+                <span class="txt">LOG OUT</span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- end .header -->

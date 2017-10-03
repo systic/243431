@@ -1,0 +1,1506 @@
+<app-sd-header data-ActiveMenu="CreateQuotation" [ElementGroup]="hiddenElementGroup" (click)="clickBody()"></app-sd-header>
+<div class="contents" (click)="clickBody()">
+  <div class="blue-boxs">
+    <div class="back-link">
+      <a [routerLink]="['/quotation']">
+        <i class="icon-back"></i>
+        <span class="back-txt">Back to Quotation</span>
+      </a>
+    </div>
+    <h4 class="blue-title">
+      {{dataList.name}}
+    </h4>
+    <div class="detail">
+      <span class="bold-txt">Car:  {{dataList.car}} </span>
+      <span class="detail-txt close" [ngClass]="{close: !showMore,open: showMore}">
+        <span class="gray-txt"> {{dataList.carDetail}}</span>
+        <a href="javascript:;" class="less-details more" (click)="showMore=true"><i class="icon-arrow"></i>More details</a>
+        <a href="javascript:;" class="less-details" (click)="showMore=false"><i class="icon-arrow"></i>Less details</a> 
+      </span>
+    </div>
+    <div class="right-top">
+      <div class="blue-top">
+        Application ID # {{dataList.id}}
+      </div>
+      <div class="black-txt">Status: {{dataList.status}}</div>
+    </div>
+  </div>
+  <!-- end .blue-boxs -->
+  
+  <div class="section section-app-work">
+    <div class="gray-tab">
+      <div class="top-tab">
+        <ul class="clearfix">
+          <li class="current">
+            <a href="javascript:;">
+              <i class="left-tip"></i>
+              <i class="icons icon-card"></i>
+              <span class="txt">Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="disabled">
+              <i class="left-tip"></i>
+              <i class="icons icon-book"></i>
+              <span class="txt">Co-Applicant</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="disabled">
+              <i class="left-tip"></i>
+              <i class="icons icon-shield"></i>
+              <span class="txt">Guarantor</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- end .top-tab -->
+      <div class="tab-bar">
+        <ul class="clearfix">
+          <li [ngClass]="{current: step === 0}" (click)="selectStep(0)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-car"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 1}" (click)="selectStep(1)">
+            <a href="javascript:;" class="btn-item wraning">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-user"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 2}" (click)="selectStep(2)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-home"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 3}" (click)="selectStep(3)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-building"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 4}" (click)="selectStep(4)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-vector"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 5}" (click)="selectStep(5)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-bank"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 6}" (click)="selectStep(6)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-file-text"></i>
+            </a>
+          </li>
+          <li [ngClass]="{current: step === 7}" (click)="selectStep(7)">
+            <a href="javascript:;" class="btn-item">
+              <i class="icons left-tip"></i>
+              <i class="icon icon-tab-clock"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end .gray-pannerl -->
+    <div class="quation-section">
+      <div class="red-border" [ngClass]="{hide: !showError || step === 7}">
+        <p>Please input your customer details below!</p>
+        <p>Main applicant needs to have more than 18 years old</p>
+      </div>
+      
+      <!--step1-->
+      <div class="step" [ngClass]="{hide: step !== 0}">
+        <div class="step-section" [ngClass]="{open: !carDetailsOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="carDetailsOpen = !carDetailsOpen"></a>Car Details</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Model Year <em>*</em></label>
+              <app-sd-dropdown [DropdownData]="step1Data['ModelYearModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Make <em>*</em></label>
+              <app-sd-dropdown [DropdownData]="step1Data['MakeModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Model <em>*</em></label>
+              <span class="inputs mr30">
+                  <input type="text" [(ngModel)]="step1Data['Model']">
+              </span>
+              <div class="checkbox-wrap after-input">                     
+                <input type="checkbox" id="{{step1Data['modalAllCheckBoxModelId']}}" [(ngModel)]="step1Data['modalAllCheckBoxModelChecked']">
+                <label for="{{step1Data['modalAllCheckBoxModelId']}}">{{step1Data['modalAllCheckBoxModelName']}}</label>
+              </div>
+            </li>
+            <li>
+              <label>Down payment percentage<em>*</em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step1Data['Down payment percentage']">
+              </span>
+            </li>
+            <li>
+              <label>Category <em>*</em></label>
+              <app-sd-dropdown [DropdownData]="step1Data['CategoryModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Term <em>*</em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step1Data['Term']">
+              </span>
+            </li>
+            <li>
+              <label>Selling Price <em>*</em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step1Data['Selling Price']">
+              </span>
+            </li>
+            <li>
+              <label>Down payment total <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step1Data['Down payment total']">
+              </span>
+            </li>
+            <li>
+              <label>Vehicle usage <em>*</em></label>
+              <app-sd-dropdown [DropdownData]="step1Data['VehicleUsageModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Plans <em>*</em></label>
+              <span class="inputs mr30">
+                <input type="text" [(ngModel)]="step1Data['Plans']">
+              </span>
+              <div class="checkbox-wrap after-input">
+                <input type="checkbox" id="{{step1Data['plansAllCheckBoxModelId']}}" [(ngModel)]="step1Data['plansAllCheckBoxModelChecked']">
+                <label for="{{step1Data['plansAllCheckBoxModelId']}}">{{step1Data['plansAllCheckBoxModelName']}}</label>
+              </div>
+            </li>
+            <li>
+              <label>Plan Details<em>*</em></label>
+              <app-sd-dropdown [DropdownData]="step1Data['PlanDetailsModelDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label><em></em></label>
+              <div class="group">
+                <div class="radio-wrap" *ngFor="let item of step1Data.typeRadioList">
+                  <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                       name="{{step1Data.typeRadioSelection}}" [(ngModel)]="step1Data.typeRadioSelectionModel">
+                  <label for="{{item.id}}">{{item.name}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step1Data['FixedRateCheckBoxModelId']}}" [(ngModel)]="step1Data['FixedRateCheckBoxModelChecked']">
+                  <label for="{{step1Data['FixedRateCheckBoxModelId']}}">{{step1Data['FixedRateCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step1Data['WithResourceCheckBoxModelId']}}" [(ngModel)]="step1Data['WithResourceCheckBoxModelChecked']">
+                  <label for="{{step1Data['WithResourceCheckBoxModelId']}}">{{step1Data['WithResourceCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step1Data['FleetCheckBoxModelId']}}" [(ngModel)]="step1Data['FleetCheckBoxModelChecked']">
+                  <label for="{{step1Data['FleetCheckBoxModelId']}}">{{step1Data['FleetCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !vAPsAndFeesOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="vAPsAndFeesOpen = !vAPsAndFeesOpen"></a>VAPs and Fees</div>
+          <div class="quation-items clearfix">
+            <div class="vaps-contents clearfix">
+              <div class="col left-boxs vap-items clearfix">
+                <div class="blue-title">
+                  <span>Category</span>
+                </div>
+                <ul>
+                  <li *ngFor="let item of step1Data.checkBoxList">
+                    <div class="checkbox-wrap" [ngClass]="{disabled: item.disabled}">
+                      <input type="checkbox" id="{{item.name + 'VAPsAndFees'}}" [disabled]="item.disabled" [(ngModel)]="item.checked">
+                      <label for="{{item.name + 'VAPsAndFees'}}">{{item.name}} <em [ngClass]="{hide: !item.required}">*</em></label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- end .check-group -->
+                  
+              <div class="col center-boxs">
+                  <ul>
+                    <li *ngFor="let item of step1Data.checkBoxList" [ngClass]="{'no-add-btn': !item.showAddBtn}">
+                      <div [ngClass]="{hide: !item.showInputBox}">
+                        <input type="text" class="control-input" [(ngModel)]="item.inputBox"/>
+                        <a href="javascript:;" class="add-btn" [ngClass]="{hide: !item.showAddBtn}">
+                          <span>+</span>
+                        </a>
+                      </div>
+                    </li>      
+                  </ul>
+              </div>
+              <!-- end .col -->
+              <div class="col right-boxs">
+                <div class="vap-items clearfix">
+                  <div class="blue-title clearfix">
+                    <span class="lefts">Financed</span> 
+                    <span class="rights">No Financed</span>
+                  </div>
+                  <div class="row clearfix" *ngFor="let item of step1Data.checkBoxList">
+                    <span class="inputs  width40">
+                      <input type="text" [(ngModel)]="item.inputBoxLeft" [disabled]="item.inputBoxLeft === ''">
+                    </span>
+                    <span [ngClass]="{'arrow-right': (item.inputBoxLeft !== ''),'arrow-left': (item.inputBoxRight !== '')}"
+                          (click)="clickArrow(item)">
+                      <i></i>
+                    </span>
+                    <span class="inputs  width40">
+                      <input type="text" [(ngModel)]="item.inputBoxRight" [disabled]="item.inputBoxRight === ''">
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                  <div class="row clearfix">
+                    <div class="vap-total">
+                      <div class="total-amout">Total Amount</div>
+                      <span class="margin-right">{{step1Data['totalAmountLeft']}}</span>
+                      <span>{{step1Data['totalAmountRight']}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end .col -->
+            </div>
+            <!-- end .vaps-contents -->
+            <div class="bottom-form">
+              <ul class="clearfix">
+                <li>
+                  <label>Security Deposit (Quantity)</label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step1Data['Security Deposit (Quantity)']" >
+                    </span>
+                </li>
+                <li>
+                  <label>1st Extraordinary Payment (Percentage)</label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step1Data['1st Extraordinary Payment (Percentage)']" >
+                    </span>
+                </li>
+                <li>
+                  <label>Residual Value</label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step1Data['Residual Value']" >
+                    </span>
+                </li>
+                <li>
+                  <label>1st Extraordinary Payment (Value)</label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step1Data['1st Extraordinary Payment (Value)']" >
+                    </span>
+                </li>
+                <li>
+                  <label>Security Deposit (Value)</label>
+                    <span class="inputs">
+                        <input type="text" [(ngModel)]="step1Data['Security Deposit (Value)']" >
+                    </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="light-blue-boxs clearfix">
+          <h4 class="blue-title">Results  from the calculation</h4>
+          <ul>
+            <li>
+              <span class="label-txt">Security Deposit (Quantity) :</span>
+              <span class="value-txt">{{step1Data['Security Deposit (Quantity) Label']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">Expected Maximum Monthly Payment:</span>
+              <span class="value-txt">{{step1Data['Expected Maximum Monthly PaymentLabel']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">Monthly Regular Rent :</span>
+              <span class="value-txt">{{step1Data['Monthly Regular RentLabel']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">First Payment Date :</span>
+              <span class="value-txt">{{step1Data['First Payment DateLabel']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">Customer rate :</span>
+              <span class="value-txt">{{step1Data['Customer rateLabel']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">CAT :</span>
+              <span class="value-txt">{{step1Data['CATLabel']}}</span>
+            </li>
+            <li>
+              <span class="label-txt">Subsidy - Percentage :</span>
+              <span class="value-txt">{{step1Data['Subsidy - PercentageLabel']}}</span>
+            </li>
+          </ul>
+        </div>
+        <!-- end .light-blue-boxs -->
+      </div>
+      <!--end .step-->
+      <!--end step1-->
+
+      <!--step2-->
+      <div class="step" [ngClass]="{hide: step !== 1}">
+        <div class="step-section" [ngClass]="{open: !personalDataOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="personalDataOpen = !personalDataOpen"></a>Personal Data</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>First Name <em></em></label>
+              <span class="inputs">
+                  <input type="text"  [(ngModel)]="step2Data['FirstNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Middle Name <em></em></label>
+              <span class="inputs">
+                  <input type="text"  [(ngModel)]="step2Data['MiddleNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Father's Name <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['FathersNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Mother's Name <em></em></label>
+              <span class="inputs">
+                  <input type="text"  [(ngModel)]="step2Data['MothersNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Is last name 2 only last name? <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['IsLastNameDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Birth Date <em></em> <i></i></label>
+              <span class="inputs date-picker other-date">
+                  <input type="text" placeholder="dd-mm-yyyy"
+                   [(ngModel)]="birthDateModel" [navigation]="arrows" (click)="birthDate.toggle();birthDateSpouse.close();signingDate.close();" ngbDatepicker #birthDate="ngbDatepicker">
+              </span>
+            </li>
+            <li>
+              <label>TAX ID<em></em></label>
+              <span class="inputs">
+                  <input type="text"  [(ngModel)]="step2Data['TAXIDInput']">
+              </span>
+            </li>
+            <li>
+              <label>Country of Birth <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['CountryOfBirthDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>State of birth <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['StateOfBirthDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Sub Customer Type <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SubCustomerTypeDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Nationality <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['NationalityDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Nationality details <em></em></label>
+              <span class="inputs">
+                  <input type="text"  [(ngModel)]="step2Data['NationalityDetailsInput']">
+              </span>
+            </li>
+            <li>
+              <label>E-Mail <em></em></label>
+              <span class="inputs">
+                  <input type="email" [(ngModel)]="step2Data['E-MailInput']">
+              </span>
+            </li>
+            <li>
+              <label>Gender <em></em></label>
+              <div class="group">
+                <div class="radio-wrap" *ngFor="let item of step2Data.GenderRadioList">
+                <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                     name="{{step2Data.GenderRadioSelection}}" [(ngModel)]="step2Data.GenderRadioSelectionModel">
+                <label for="{{item.id}}">{{item.name}}</label>
+              </div>
+              </div>
+            </li>
+            <li>
+              <label>Number or Dependants<em>*</em> <i></i></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['NumberOrDependantsInput']">
+              </span>
+            </li>
+            <li>
+              <label>ID Number <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['IDNumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Marital Status <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['MaritalStatusDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Spouse is other applicant type <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseIsOtherApplicantTypeDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Spouse contribute incomes for the loan <em></em></label>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step2Data['SpouseContributeCheckBoxModelId']}}" [(ngModel)]="step2Data['SpouseContributeCheckBoxModelChecked']">
+                  <label for="{{step2Data['SpouseContributeCheckBoxModelId']}}">{{step2Data['SpouseContributeCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+            </li>
+            <li>
+              <label>Foreign ID<em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['ForeignIDInput']">
+              </span>
+            </li>
+            <li>
+              <label>Customer Identifier<em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['CustomerIdentifierDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>SubProgram Identifier<em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SubProgramIdentifierDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !spouseDataOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="spouseDataOpen = !spouseDataOpen"></a>Spouse Data</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>First Name <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseFirstNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Middle Name <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseMiddleNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Father's Name <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseFathersNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Mother's Name <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseMothersNameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Is last name 2 only last name? <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseIsLastNameDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Birth Date <em></em></label>
+               <span class="inputs date-picker other-date">
+                  <input type="text" placeholder="dd-mm-yyyy"
+                   [(ngModel)]="birthDateSpouseModel" [navigation]="arrows" (click)="birthDateSpouse.toggle();birthDate.close();signingDate.close();" ngbDatepicker #birthDateSpouse="ngbDatepicker">
+              </span>
+            </li>
+            <li>
+              <label>TAX ID<em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseTAXIDInput']">
+              </span>
+            </li>
+            <li>
+              <label>Country of Birth <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseCountryOfBirthDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>State of birth <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseStateOfBirthDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Sub Customer Type <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseSubCustomerTypeDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Nationality <em></em></label>
+              <app-sd-dropdown [DropdownData]="step2Data['SpouseNationalityDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+            </li>
+            <li>
+              <label>E-Mail <em></em></label>
+               <span class="inputs">
+                  <input type="email" [(ngModel)]="step2Data['SpouseE-MailInput']">
+              </span>
+            </li>
+            <li>
+              <label>Gender <em></em></label>
+              <div class="group">
+                <div class="radio-wrap" *ngFor="let item of step2Data.SpouseGenderRadioList">
+                  <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                       name="{{step2Data.SpouseGenderRadioSelection}}" [(ngModel)]="step2Data.SpouseGenderRadioSelectionModel">
+                  <label for="{{item.id}}">{{item.name}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <label>ID Number <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['ID NumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Serial number of Advanced Electronic Signature <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step2Data['SpouseSerialNnumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Spouse is beneficiary <em></em></label>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step2Data['SpouseBeneficiaryCheckBoxModelId']}}" [(ngModel)]="step2Data['SpouseBeneficiaryCheckBoxModelChecked']">
+                  <label for="{{step2Data['SpouseBeneficiaryCheckBoxModelId']}}">{{step2Data['SpouseBeneficiaryCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end .step-->
+      <!--end step2-->
+
+      <!--step3-->
+      <div class="step" [ngClass]="{hide: step !== 2}">
+        <div class="step-section" [ngClass]="{open: !currentAddressOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="currentAddressOpen = !currentAddressOpen"></a>Current Address</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Street <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['StreetInput']">
+              </span>
+            </li>
+            <li>
+              <label>Ext <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['ExtInput']">
+              </span>
+            </li>
+            <li>
+              <label>Int <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['IntInput']">
+              </span>
+            </li>
+            <li>
+              <label>Neighborhood <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['NeighborhoodInput']">
+              </span>
+            </li>
+            <li>
+              <label>State <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['StateDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Town Name <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['TownNameDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>City <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['CityInput']">
+              </span>
+            </li>
+            <li>
+              <label>Postal Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Postal CodeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Residence Type <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['ResidenceTypeDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Permanence Years <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Permanence YearsInput']">
+              </span>
+            </li>
+            <li>
+              <label>Permanence Months <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Permanence MonthsInput']">
+              </span>
+            </li>
+            <li>
+              <label>Monthly Payment <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Monthly PaymentInput']">
+              </span>
+            </li>
+            <li>
+              <label>Value <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['ValueInput']">
+              </span>
+            </li>
+            <li>
+              <label>Telephone Area Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Telephone Area CodeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Telephone <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['TelephoneInput']">
+              </span>
+            </li>
+            <li>
+              <label>Cellphone code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Cellphone codeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Cellphone <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['CellphoneInput']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !previousAddressOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="previousAddressOpen = !previousAddressOpen"></a>Previous Address</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Street <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['PreviousStreetInput']">
+              </span>
+            </li>
+            <li>
+              <label>External number <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['External numberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Internal number <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Internal numberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Postal Code <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['PreviousPostal CodeInput']">
+              </span>
+            </li>
+            <li>
+              <label>State <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['PreviousStateDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>City <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['PreviousCityDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Neighborhood <em></em></label>
+              <app-sd-dropdown [DropdownData]="step3Data['PreviousNeighborhoodDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Seniority  - Years <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Seniority - YearsInput']">
+              </span>
+            </li>
+            <li>
+              <label>Seniority - Months <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step3Data['Seniority - MonthsInput']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end .step-->
+      <!--end step3-->
+
+      <!--step4-->
+      <div class="step" [ngClass]="{hide: step !== 3}">
+        <div class="step-section" [ngClass]="{open: !employmentOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="employmentOpen = !employmentOpen"></a>Employment</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Origin of Funds <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['OriginOFFundsDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Profession <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['ProfessionDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Ocupation <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['OcupationDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Others <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['OthersInput']">
+              </span>
+            </li>
+            <li>
+              <label>Activity <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['ActivityDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Company name  <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Company name Input']">
+              </span>
+            </li>
+            <li>
+              <label>Country<em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['CountryDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>State <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['StateDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Province <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['ProvinceDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>City <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['CityInput']">
+              </span>
+            </li>
+            <li>
+              <label>Neighborhood <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['NeighborhoodDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Postal Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Postal CodeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Street <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['StreetInput']">
+              </span>
+            </li>
+            <li>
+              <label>Ext. <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['ExtInput']">
+              </span>
+            </li>
+            <li>
+              <label>Int. <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['IntInput']">
+              </span>
+            </li>
+            <li>
+              <label>Telephone area code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Telephone area codeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Telephone <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['TelephoneInput']">
+              </span>
+            </li>
+            <li>
+              <label>Extension <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['ExtensionInput']">
+              </span>
+            </li>
+            <li>
+              <label>Seniority years <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Seniority yearsInput']">
+              </span>
+            </li>
+            <li>
+              <label>Seniority months <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Seniority monthsInput']">
+              </span>
+            </li>
+            <li>
+              <label>Type of Contract <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['TypeofContractDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Monthly Income <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Monthly IncomeInput']">
+              </span>
+              <a href="javascript:;" class="add-btn top22"><span>+</span></a>
+            </li>
+            <li>
+              <label>Additional Monthly Income <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Additional Monthly IncomeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Additional Income - Details <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['Additional Income - DetailsInput']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !previousEmploymentOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="previousEmploymentOpen = !previousEmploymentOpen"></a>Previous Employment</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Company name <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['PreviousCompany nameInput']">
+              </span>
+            </li>
+            <li>
+              <label>Phone - Area Code. <em></em></label>
+               <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['PreviousPhone - Area CodeInput']">
+              </span>
+            </li>
+            <li>
+              <label>Phone - No label. <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['PreviousPhone - No labelInput']">
+              </span>
+            </li>
+            <li>
+              <label>Phone - No Label 2 <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step4Data['PreviousPhone - No Label 2Input']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !spouseEmploymentOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="spouseEmploymentOpen = !spouseEmploymentOpen"></a>Spouse Employment</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Origin of Funds <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['SpouseOriginOfFundsDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Profession <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['SpouseProfessionDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Activity <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['SpouseActivityDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Occupation <em></em></label>
+              <app-sd-dropdown [DropdownData]="step4Data['SpouseOccupationDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end .step-->
+      <!--end step4-->
+
+      <!--step5-->
+      <div class="step" [ngClass]="{hide: step !== 4}">
+        <div class="step-section" [ngClass]="{open: !personalReferences1Open}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="personalReferences1Open = !personalReferences1Open"></a>Personal References 1</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Name <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Name1Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Area Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Area Code1Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Number <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Number1Input']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !personalReferences2Open}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="personalReferences2Open = !personalReferences2Open"></a>Personal References 2</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Name <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Name2Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Area Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Area Code2Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Number <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Number2Input']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !personalReferences3Open}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="personalReferences3Open = !personalReferences3Open"></a>Personal References 3</div>
+          <ul class="quation-items clearfix">
+            <li>
+              <label>Name <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Name3Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Area Code <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Area Code3Input']">
+              </span>
+            </li>
+            <li>
+              <label>Phone  - Number <em></em></label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step5Data['Phone - Number3Input']">
+              </span>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end .step-->
+      <!--end step5-->
+
+      <!--step6-->
+      <div class="step" [ngClass]="{hide: step !== 5}">
+        <div class="step-section" [ngClass]="{open: !pepOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="pepOpen = !pepOpen"></a>PEP</div>
+          <div class="pep-content">
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Mention if the vehicle will be used mainly by another company or a third person (different to the applicant and/or co-solicitante)</p>
+                <p class="txt">(owner Real). "If so, please provide the following information:"</p>
+              </div>
+              <div class="right-area">
+                <div class="right-boxs">
+                  <div class="radio-wrap" *ngFor="let item of step6Data.plan1RadioList">
+                    <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                         name="{{step6Data.plan1RadioSelection}}" [(ngModel)]="step6Data.plan1RadioSelectionModel">
+                    <label for="{{item.id}}">{{item.name}}</label>
+                  </div>
+                  <a href="javascript:;" class="add-blue">+</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Does the pure credit/leasing will be liquidated with lawful resources of the company representing (provider resources)</p>
+                <p class="txt gray">If not, please provide the following information:</p>
+              </div>
+              <div class="right-area">
+                <div class="right-boxs">
+                  <div class="radio-wrap" *ngFor="let item of step6Data.plan2RadioList">
+                    <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                         name="{{step6Data.plan2RadioSelection}}" [(ngModel)]="step6Data.plan2RadioSelectionModel">
+                    <label for="{{item.id}}">{{item.name}}</label>
+                  </div>
+                  <a href="javascript:;" class="add-blue">+</a>
+                </div>
+              </div>
+            </div>
+            <!-- end .row -->
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Plays or has played functions public or activities political featured in territory national or in the foreigner?</p>
+                <p class="txt gray">(See details in credit application)</p>
+              </div>
+              <div class="right-area">
+                <div class="right-boxs">
+                  <div class="radio-wrap" *ngFor="let item of step6Data.plan3RadioList">
+                    <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                         name="{{step6Data.plan3RadioSelection}}" [(ngModel)]="step6Data.plan3RadioSelectionModel">
+                    <label for="{{item.id}}">{{item.name}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end .row -->
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Detail title and date from which the raising or let it play</p>
+              </div>
+              <div class="right-area">
+                <span class="inputs ml20">
+                  <input type="text" [(ngModel)]="step6Data['Florida State GovernmentInput']">
+                </span>
+              </div>
+            </div>
+            <!-- end .row -->
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Have you some family by consanguinidade or affinity that plays or has played functions public or activities political outstanding in</p>
+                <p class="txt ">territory national or in the overseas?<span class="gray">(See details in credit application)</span></p>
+              </div>
+              <div class="right-area">
+                <div class="right-boxs">
+                  <div class="radio-wrap" *ngFor="let item of step6Data.plan4RadioList">
+                    <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                         name="{{step6Data.plan4RadioSelection}}" [(ngModel)]="step6Data.plan4RadioSelectionModel">
+                    <label for="{{item.id}}">{{item.name}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end .row -->
+
+            <div class="row clearfix">
+              <ul class="form-group">
+                <li>
+                  <span class="label">
+                    Relative Name
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['Relative NameInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    Relationship
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['RelationshipInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    Occupation
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['OccupationInput']">
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- end .row -->
+            
+            <div class="row clearfix">
+              <div class="left-area">
+                <p class="txt">Indicate if you have authorization to reside in Mexico</p>
+              </div>
+              <div class="right-area">
+                <div class="right-boxs">
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="{{step6Data['modalCheckBoxModelId']}}" [(ngModel)]="step6Data['modalCheckBoxModelChecked']">
+                    <label for="{{step6Data['modalCheckBoxModelId']}}">{{step6Data['modalCheckBoxModelName']}}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end .row -->
+
+            <div class="row clearfix">
+              <ul class="form-group">
+                <li>
+                  <span class="label">
+                    Foreign Address Street and number
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['Foreign Address Street and numberInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    Phone
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['PhoneInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    Neighborhood
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['NeighborhoodInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    City
+                  </span>
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="step6Data['CityInput']">
+                  </div>
+                </li>
+                <li>
+                  <span class="label">
+                    Country
+                  </span>
+                  <app-sd-dropdown [DropdownData]="step6Data['CountryDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+                </li>
+              </ul>
+            </div>
+            <!-- end .row -->
+          </div>
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end step6-->
+
+      <!--step7-->
+      <div class="step" [ngClass]="{hide: step !== 6}">
+        <div class="step-section" [ngClass]="{open: !documentsOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="documentsOpen = !documentsOpen"></a>Documents required to Analysis Credit Decision</div>
+          <ul class="decision-items">
+            <li class="clearfix" *ngFor="let item of step7Data.DocumentsTable">
+              <span class="width16 color-blue">{{item.name === '' ? 'Bank Record' : item.name}}</span>
+              <span class="width16">
+                <i class="icons-item icon-{{item.status.toLowerCase()}}"></i>
+                <em>{{item.status}}</em>
+              </span>
+              <span class="width16">
+                {{item.fileName}}
+              </span>
+              <span class="width36">
+                <em [ngClass]="{'gray-bg': item.fileType !== ''}">
+                  {{item.fileType}}
+                </em>
+              </span>
+              <div class="width16">
+                <div class="root-group">
+                  <a href="javascript:;" class="icons icon-delete"
+                     [ngClass]="{disabled: item.fileName === ''}">
+                  </a>
+                  <a href="javascript:;" class="icons icon-edit"
+                     [ngClass]="{disabled: item.fileName === ''}">
+                  </a>
+                  <a href="javascript:;" class="icons icon-upload">
+                    <input type="file" class="file-input" (change)="getFiles(item,$event)">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--end .step-section-->
+
+        <div class="step-section" [ngClass]="{open: !postApplicationDataOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="postApplicationDataOpen = !postApplicationDataOpen"></a>Post Application Data</div>
+          <ul class="quation-items post-application clearfix">
+            <li>
+              <label>Account Type</label>
+              <app-sd-dropdown [DropdownData]="step7Data['Account TypeDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>Bank</label>
+              <app-sd-dropdown [DropdownData]="step7Data['BankDropdown']" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+            </li>
+            <li>
+              <label>No. de Cuenta/CLABE</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['No de Cuenta/CLABEInput']">
+              </span>
+            </li>
+            <li>
+              <label>Signing Date</label>
+              <span class="inputs date-picker other-date">
+                  <input type="text" placeholder="dd-mm-yyyy"
+                   [(ngModel)]="birthDateSpouseModel" [navigation]="arrows" (click)="signingDate.toggle();birthDate.close();birthDateSpouse.close();" ngbDatepicker #signingDate="ngbDatepicker">
+                  <a href="javascript:;" class="icon-calendar" (click)="signingDate.toggle()"></a>
+              </span>
+            </li>
+            <li>
+              <label>Vin Number</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Vin NumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Engine Number</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Engine NumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Body work</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Body workInput']">
+              </span>
+            </li>
+            <li>
+              <label>Package Letter to indicate Model</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Package Letter to indicate ModelInput']">
+              </span>
+            </li>
+            <li>
+              <label>Signature Place</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Signature PlaceInput']">
+              </span>
+            </li>
+            <li>
+              <label>Vendor</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['VendorInput']">
+              </span>
+            </li>
+            <li>
+              <label>Contract / Reference</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Contract ReferenceInput']">
+              </span>
+            </li>
+            <li>
+              <label>GAP Insurance Number.</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['GAP Insurance NumberInput']">
+              </span>
+            </li>
+            <li>
+              <label>Use data for marketing</label>
+              <div class="group">
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="{{step7Data['Use data for marketingCheckBoxModelId']}}" [(ngModel)]="step7Data['Use data for marketingCheckBoxModelChecked']">
+                  <label for="{{step7Data['Use data for marketingCheckBoxModelId']}}">{{step7Data['Use data for marketingCheckBoxModelName']}}</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <label>Unemployment Insurance Number</label>
+              <span class="inputs">
+                  <input type="text" [(ngModel)]="step7Data['Unemployment Insurance NumberInput']">
+              </span>
+            </li>
+            <li class="width40">
+              <label>Referred by</label>
+              <div class="group mr300">
+                <div class="radio-wrap" *ngFor="let item of step7Data.ReferredByRadioList">
+                  <input type="radio" id="{{item.id}}" value="{{item.id}}"
+                       name="{{step7Data.ReferredByRadioSelection}}" [(ngModel)]="step7Data.ReferredByRadioSelectionModel">
+                  <label for="{{item.id}}">{{item.name}}</label>
+                </div>
+              </div>
+            </li>
+            <li class="width100">
+              <label>Comments</label>
+              <div class="textareas">
+                <textarea [(ngModel)]="step7Data.commentTextarea"></textarea>
+              </div>
+            </li>
+          </ul>
+          <!--end .quation-items-->
+        </div>
+        <!-- end .step-section -->
+
+        <div class="step-section" [ngClass]="{open: !contractPrintingOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="contractPrintingOpen = !contractPrintingOpen"></a>Contract Printing</div>
+          <ul class="decision-items">
+            <li class="clearfix" *ngFor="let item of step7Data.ContractTable">
+              <span class="width16 color-blue">{{item.name === '' ? 'Bank Record' : item.name}}</span>
+              <span class="width16">
+                <i class="icons-item icon-{{item.status.toLowerCase()}}"></i>
+                <em>{{item.status}}</em>
+              </span>
+              <span class="width16">
+                {{item.fileName}}
+              </span>
+              <span class="width36">
+                <em [ngClass]="{'gray-bg': item.fileType !== ''}">
+                  {{item.fileType}}
+                </em>
+              </span>
+              <div class="width16">
+                <div class="root-group">
+                  <a href="javascript:;" class="icons icon-delete"
+                     [ngClass]="{disabled: item.fileName === ''}"></a>
+                  <a href="javascript:;" class="icons icon-edit"
+                     [ngClass]="{disabled: item.fileName === ''}"></a>
+                  <a href="javascript:;" class="icons icon-upload">
+                    <input type="file" class="file-input" (change)="getFiles(item,$event)">
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--end .step-section-->
+
+
+      </div>
+      <!--end step7-->
+
+      <!--step8-->
+      <div class="step" [ngClass]="{hide: step !== 7}">
+        <div class="step-section" [ngClass]="{open: !historyOpen}">
+          <div class="title"><a href="javascript:;" class="btn-status" (click)="historyOpen = !historyOpen"></a>History</div>
+          <div class="quation-table">
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Comments</th>
+                <th>Modified by</th>
+              </tr>
+              <tr *ngFor="let item of step8Data.HistoryTable">
+                <td>{{item.Date}}</td>
+                <td>{{item.Status}}</td>
+                <td>{{item.Comments}}</td>
+                <td>{{item['Modified by']}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!--end .step-section-->
+      </div>
+      <!--end step8-->
+
+      <div class="btn-group-row clearfix">
+        <a href="javascript:;" class="btn btn-green btn-previous"
+           [ngClass]="{hide: step === 0}" (click)="changeStep(step-1)">
+         <i class="icon-pre"></i>Previous
+        </a>
+        <a href="javascript:;" class="btn btn-green btn-next"
+           [ngClass]="{hide: step === 7}" (click)="changeStep(step+1)">
+         Next<i class="icon-next"></i>
+        </a>
+        <div class="right-btn">
+          <a href="javascript:;" class="btn btn-gray width133" (click)="saveUpdates()">Save updates</a>
+          <a href="javascript:;" class="btn btn-gray width135" (click)="openModalWindow('modal-warning')">Edit / Cancel</a>
+          <a href="javascript:;" class="btn btn-gray width120">Copy</a>
+          <a href="javascript:;" class="btn btn-gray width131" (click)="openModalWindow('modal-submit')">Submit</a>
+          <a href="javascript:;" class="btn btn-gray disabled width131">Print Contract</a>
+        </div>
+      </div>
+      <!-- end .btn-group -->
+    </div>
+  </div>
+  <!-- end .section-app-work -->
+</div>
+<!-- end .contents -->
+
+<div class="modal-backdrop in" [ngClass]="{hide: !showModal}"></div>
+<div class="modal modal-default modal-warning" (click)="closeModalWindow()"
+ [ngClass]="{hide: !(showModal && shownModalName === 'modal-warning') }">
+  <div class="modal-dialog" (click)="$event.stopPropagation();">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="blue-title">Warning!</h4>
+      </div>
+      <div class="modal-body">
+        <p class="gray-txt">
+          This application has not been saved yet.
+          Are you sure want to cancel this updates?
+        </p>
+      </div>
+      <div class="modal-footer clearfix">
+        <div class="btn-group">
+          <a href="javascript:;" class="btn-circle btn-blue" (click)="closeModalWindow()">Cancel</a>
+          <a [routerLink]="['/']" class="btn-circle btn-gray">OK, Leave this</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal -->
+
+<div class="modal modal-default modal-submit" (click)="closeModalWindow()"
+ [ngClass]="{hide: !(showModal && shownModalName === 'modal-submit') }">
+  <div class="modal-dialog" (click)="$event.stopPropagation();">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="icon-complete"></i>
+      </div>
+      <div class="modal-body">
+        <h4 class="blue-title">Application Submitted</h4>
+        <p class="gray-txt">
+          Successfully submit this application!!
+        </p>
+      </div>
+      <div class="modal-footer clearfix">
+        <div class="btn-group">
+          <a [routerLink]="['/']" class="btn-circle btn-blue">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal -->

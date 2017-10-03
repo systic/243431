@@ -1,0 +1,1105 @@
+{
+  "status": "Qualified",
+  "id": "13389043",
+  "name": "Reid Hoffman",
+  "car": "Chevrolet - Cruze - HB LT AC 2.0D",
+  "carDetail": "CSP: $ 180,000 - DP: $ 30,000 - Term: 36 Mon - Monthly Payment $ 2,450 - Total Amunt: 120,343",
+  "step1Data": {
+    "typeRadioSelection": "typeRadioSelection",
+    "typeRadioSelectionModel": "type1",
+    "typeRadioList": [
+      {
+        "id": "type1",
+        "name": "New"
+      },
+      {
+        "id": "type2",
+        "name": "Semi New / Used"
+      }
+    ],
+    "ModelYearModelDropdown":{
+      "dropdownName": "ModelYearModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "2014"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "MakeModelDropdown":{
+      "dropdownName": "MakeTypeModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Chevrolet"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CategoryModelDropdown":{
+      "dropdownName": "CategoryModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Package B"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "VehicleUsageModelDropdown":{
+      "dropdownName": "VehicleUsageModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Passengers"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "PlanDetailsModelDropdown":{
+      "dropdownName": "PlanDetailsModelDropdown",
+      "defaultText": "Select",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Employes HB LT"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "Down payment percentage": "",
+    "Down payment total": "",
+    "Model": "Curze",
+    "Term": "24",
+    "Selling Price": "19.350",
+    "Plans": "HB LT AC 2.0D",
+    "modalAllCheckBoxModelId": "modalAllCheckBox",
+    "modalAllCheckBoxModelChecked": true,
+    "modalAllCheckBoxModelName": "All",
+    "plansAllCheckBoxModelId": "plansAllCheckBox",
+    "plansAllCheckBoxModelChecked": true,
+    "plansAllCheckBoxModelName": "All",
+    "FixedRateCheckBoxModelId": "FixedRateCheckBox",
+    "FixedRateCheckBoxModelChecked": true,
+    "FixedRateCheckBoxModelName": "Fixed rate",
+    "WithResourceCheckBoxModelId": "WithResourceCheckBox",
+    "WithResourceCheckBoxModelChecked": true,
+    "WithResourceCheckBoxModelName": "With Resource",
+    "FleetCheckBoxModelId": "FleetCheckBox",
+    "FleetCheckBoxModelChecked": true,
+    "FleetCheckBoxModelName": "Fleet",
+    "checkBoxList": [
+      {
+        "name": "Car Insurance",
+        "checked": false,
+        "disabled": true,
+        "required": true,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Qualitas",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Life Insurance ($)",
+        "checked": false,
+        "disabled": true,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Metlife",
+        "inputBoxLeft": "",
+        "inputBoxRight": "120,343"
+      },
+      {
+        "name": "Unemployed Insurance",
+        "checked": false,
+        "disabled": true,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "Metlife",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Fee (when it's not direct debit)",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "GAP",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": false,
+        "inputBox": "BNP Paribas",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Extended Warranty",
+        "checked": true,
+        "disabled": false,
+        "required": false,
+        "showInputBox": true,
+        "showAddBtn": true,
+        "inputBox": "ABA",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Parts and Accessories",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "OnStar",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Other amount",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      },
+      {
+        "name": "Opening Fee",
+        "checked": false,
+        "disabled": false,
+        "required": false,
+        "showInputBox": false,
+        "showAddBtn": false,
+        "inputBox": "",
+        "inputBoxLeft": "120,343",
+        "inputBoxRight": ""
+      }
+    ],
+    "totalAmountLeft": "120,343",
+    "totalAmountRight": "120,343",
+    "Security Deposit (Quantity)": "120,000",
+    "1st Extraordinary Payment (Percentage)": "60,000",
+    "Residual Value": "43,000",
+    "1st Extraordinary Payment (Value)": "120,000",
+    "Security Deposit (Value)": "Plan 1",
+    "Security Deposit (Quantity) Label": "$ 10,000",
+    "Expected Maximum Monthly PaymentLabel": "$ 11,000",
+    "Monthly Regular RentLabel": "$ 10,000",
+    "First Payment DateLabel": "1.5%",
+    "Customer rateLabel": "12%",
+    "CATLabel": "13%",
+    "Subsidy - PercentageLabel": "0%"
+  },
+  "step2Data": {
+    "IsLastNameDropdown":{
+      "dropdownName": "IsLastNameDropdown",
+      "defaultText": "No",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "No"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CountryOfBirthDropdown":{
+      "dropdownName": "CountryOfBirthDropdown",
+      "defaultText": "Mexico",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Mexico"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "StateOfBirthDropdown":{
+      "dropdownName": "StateOfBirthDropdown",
+      "defaultText": "Nuevo Leon",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Nuevo Leon"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SubCustomerTypeDropdown":{
+      "dropdownName": "SubCustomerTypeDropdown",
+      "defaultText": "Private Individual with enterprise...",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Private Individual with enterprise..."
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "NationalityDropdown":{
+      "dropdownName": "NationalityDropdown",
+      "defaultText": "Extranjero",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Extranjero"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "MaritalStatusDropdown":{
+      "dropdownName": "MaritalStatusDropdown",
+      "defaultText": "Married",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Married"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseIsOtherApplicantTypeDropdown":{
+      "dropdownName": "SpouseIsOtherApplicantTypeDropdown",
+      "defaultText": "Co-Applicant",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Co-Applicant"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CustomerIdentifierDropdown":{
+      "dropdownName": "CustomerIdentifierDropdown",
+      "defaultText": "New",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "New"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SubProgramIdentifierDropdown":{
+      "dropdownName": "SubProgramIdentifierDropdown",
+      "defaultText": "New",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Option"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "FirstNameInput": "Juan",
+    "MiddleNameInput": "Martin",
+    "FathersNameInput": "Perez",
+    "MothersNameInput": "Lopez",
+    "BirthDateInput": {
+      "year": 2000,
+      "month": 1,
+      "day": 1
+    },
+    "TAXIDInput": "LOJM-800101-TY0",
+    "NationalityDetailsInput": "Colombiano",
+    "E-MailInput": "juan@gmail.com",
+    "NumberOrDependantsInput": "",
+    "IDNumberInput": "LOJM800101MXMTYNL05142",
+    "ForeignIDInput": "G78926541",
+    "GenderRadioSelection": "GenderRadioSelection",
+    "GenderRadioSelectionModel": "Gender1",
+    "GenderRadioList": [
+      {
+        "id": "Gender1",
+        "name": "Male"
+      },
+      {
+        "id": "Gender2",
+        "name": "Female"
+      }
+    ],
+    
+    "SpouseContributeCheckBoxModelId": "SpouseContributeCheckBox",
+    "SpouseContributeCheckBoxModelChecked": true,
+    "SpouseContributeCheckBoxModelName": "No",
+    "SpouseIsLastNameDropdown":{
+      "dropdownName": "SpouseIsLastNameDropdown",
+      "defaultText": "No",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "No"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseCountryOfBirthDropdown":{
+      "dropdownName": "SpouseCountryOfBirthDropdown",
+      "defaultText": "Mexico",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Mexico"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseStateOfBirthDropdown":{
+      "dropdownName": "SpouseStateOfBirthDropdown",
+      "defaultText": "Nuevo Leon",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Nuevo Leon"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseSubCustomerTypeDropdown":{
+      "dropdownName": "SpouseSubCustomerTypeDropdown",
+      "defaultText": "Private Individual with enterprise...",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Private Individual with enterprise..."
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseNationalityDropdown":{
+      "dropdownName": "SpouseNationalityDropdown",
+      "defaultText": "Mexicana",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Mexicana"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseFirstNameInput": "Maria",
+    "SpouseMiddleNameInput": "De los Angeles",
+    "SpouseFathersNameInput": "Salazar",
+    "SpouseMothersNameInput": "Valle",
+    "SpouseBirthDateInput": {
+      "year": 1986,
+      "month": 12,
+      "day": 1
+    },
+    "SpouseTAXIDInput": "SAMD-861201-N87",
+    "SpouseE-MailInput": "maria@hotmail.com",
+    "ID NumberInput": "SAMD861201MTYNL675",
+    "SpouseSerialNnumberInput": "",
+    "SpouseGenderRadioSelection": "SpouseGenderRadioSelection",
+    "SpouseGenderRadioSelectionModel": "SpouseGender1",
+    "SpouseGenderRadioList": [
+      {
+        "id": "SpouseGender1",
+        "name": "Male"
+      },
+      {
+        "id": "SpouseGender2",
+        "name": "Female"
+      }
+    ],
+    "SpouseBeneficiaryCheckBoxModelId": "SpouseBeneficiaryCheckBox",
+    "SpouseBeneficiaryCheckBoxModelChecked": true,
+    "SpouseBeneficiaryCheckBoxModelName": "Yes"
+  },
+  "step3Data": {
+    "StateDropdown":{
+      "dropdownName": "StateDropdown",
+      "defaultText": "Nuevo Leon",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Nuevo Leon"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "TownNameDropdown":{
+      "dropdownName": "TownNameDropdown",
+      "defaultText": "Monterrey",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Monterrey"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "ResidenceTypeDropdown":{
+      "dropdownName": "ResidenceTypeDropdown",
+      "defaultText": "Own",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Own"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "StreetInput": "Eugenio Garza Sada",
+    "ExtInput": "933",
+    "IntInput": "",
+    "NeighborhoodInput": "San Pedro Garza Garcia",
+    "CityInput": "Monterrey",
+    "Postal CodeInput": "67100",
+    "Permanence YearsInput": "0",
+    "Permanence MonthsInput": "",
+    "Monthly PaymentInput": "",
+    "ValueInput": "",
+    "Telephone Area CodeInput": "8",
+    "TelephoneInput": "81300000",
+    "Cellphone codeInput": "81",
+    "CellphoneInput": "89630000",
+    
+    "PreviousStateDropdown":{
+      "dropdownName": "PreviousStateDropdown",
+      "defaultText": "Coahuila",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Coahuila"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "PreviousCityDropdown":{
+      "dropdownName": "CityDropdown",
+      "defaultText": "Saltillo",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Saltillo"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "PreviousNeighborhoodDropdown":{
+      "dropdownName": "NeighborhoodDropdown",
+      "defaultText": "Las brisas",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Las brisas"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "PreviousStreetInput": "Fake Street",
+    "External numberInput": "123",
+    "Internal numberInput": "",
+    "PreviousPostal CodeInput": "65100",
+    "Seniority - YearsInput": "4",
+    "Seniority - MonthsInput": "0"
+  },
+  "step4Data": {
+    "OriginOFFundsDropdown":{
+      "dropdownName": "OriginOFFundsDropdown",
+      "defaultText": "Employee",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Employee"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "ProfessionDropdown":{
+      "dropdownName": "ProfessionDropdown",
+      "defaultText": "Doctor or Medic",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Doctor or Medic"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "OcupationDropdown":{
+      "dropdownName": "OcupationDropdown",
+      "defaultText": "Professional",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Professional"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "ActivityDropdown":{
+      "dropdownName": "ActivityDropdown",
+      "defaultText": "Medical Services",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Medical Services"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "CountryDropdown":{
+      "dropdownName": "CountryDropdown",
+      "defaultText": "Mexico",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Mexico"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "StateDropdown":{
+      "dropdownName": "StateDropdown",
+      "defaultText": "Nuevo Leon",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Nuevo Leon"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "ProvinceDropdown":{
+      "dropdownName": "ProvinceDropdown",
+      "defaultText": "Own",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Own"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "NeighborhoodDropdown":{
+      "dropdownName": "NeighborhoodDropdown",
+      "defaultText": "Valle",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Valle"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "TypeofContractDropdown":{
+      "dropdownName": "TypeofContractDropdown",
+      "defaultText": "Permanent Full Time",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Permanent Full Time"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "OthersInput": "",
+    "Company name Input": "Zanitas",
+    "CityInput": "Monterrey",
+    "Postal CodeInput": "67100",
+    "StreetInput": "Eugenio Garza Sada",
+    "ExtInput": "9300",
+    "IntInput": "",
+    "Telephone area codeInput": "8",
+    "TelephoneInput": "81002500",
+    "ExtensionInput": "1542",
+    "Seniority yearsInput": "0",
+    "Seniority monthsInput": "8",
+    "Monthly IncomeInput": "10,000",
+    "Additional Monthly IncomeInput": "5,000",
+    "Additional Income - DetailsInput": "Christmas Bonus",    
+    
+    "PreviousCompany nameInput": "Zucaritas de Kellogs",
+    "PreviousPhone - Area CodeInput": "8",
+    "PreviousPhone - No labelInput": "81520000",
+    "PreviousPhone - No Label 2Input": "8547",    
+    
+    "SpouseOriginOfFundsDropdown":{
+      "dropdownName": "SpouseOriginOfFundsDropdown",
+      "defaultText": "Housekeeper",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Housekeeper"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseProfessionDropdown":{
+      "dropdownName": "SpouseProfessionDropdown",
+      "defaultText": "Cheff",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Cheff"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseActivityDropdown":{
+      "dropdownName": "SpouseActivityDropdown",
+      "defaultText": "Other Services",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Other Services"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "SpouseOccupationDropdown":{
+      "dropdownName": "SpouseOccupationDropdown",
+      "defaultText": "House",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "House"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    }
+  },
+  "step5Data": {
+    "Name1Input": "Jose Lopez",
+    "Phone - Area Code1Input": "8",
+    "Phone - Number1Input": "84579621",
+    
+    "Name2Input": "Irma Lopez",
+    "Phone - Area Code2Input": "8",
+    "Phone - Number2Input": "87546214",
+    
+    "Name3Input": "Catalina Lopez",
+    "Phone - Area Code3Input": "8",
+    "Phone - Number3Input": "81452000"
+  },
+  "step6Data": {
+    "CountryDropdown":{
+      "dropdownName": "CountryDropdown",
+      "defaultText": "United states",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "United states"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "Relative NameInput": "Lucia Lopez",
+    "RelationshipInput": "Mother",
+    "OccupationInput": "Doctor",
+    "Foreign Address Street and numberInput": "Fake Street 123",
+    "PhoneInput": "881234500",
+    "NeighborhoodInput": "Orlando",
+    "CityInput": "Florida",
+    "Florida State GovernmentInput": "Florida State Government",
+    
+    "plan1RadioSelection": "plan1RadioSelection",
+    "plan1RadioSelectionModel": "plan11",
+    "plan1RadioList": [
+      {
+        "id": "plan11",
+        "name": "Yes"
+      },
+      {
+        "id": "plan12",
+        "name": "No"
+      }
+    ],
+    "plan2RadioSelection": "plan2RadioSelection",
+    "plan2RadioSelectionModel": "plan21",
+    "plan2RadioList": [
+      {
+        "id": "plan21",
+        "name": "Yes"
+      },
+      {
+        "id": "plan22",
+        "name": "No"
+      }
+    ],
+    "plan3RadioSelection": "plan3RadioSelection",
+    "plan3RadioSelectionModel": "plan31",
+    "plan3RadioList": [
+      {
+        "id": "plan31",
+        "name": "Yes"
+      },
+      {
+        "id": "plan32",
+        "name": "No"
+      }
+    ],
+    "plan4RadioSelection": "plan4RadioSelection",
+    "plan4RadioSelectionModel": "plan41",
+    "plan4RadioList": [
+      {
+        "id": "plan41",
+        "name": "Yes"
+      },
+      {
+        "id": "plan42",
+        "name": "No"
+      }
+    ],
+    "modalCheckBoxModelId": "modalCheckBox",
+    "modalCheckBoxModelChecked": true,
+    "modalCheckBoxModelName": ""
+  },
+  "step7Data": {
+  
+    "Account TypeDropdown":{
+      "dropdownName": "Account TypeDropdown",
+      "defaultText": "United states",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Option"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "BankDropdown":{
+      "dropdownName": "BankDropdown",
+      "defaultText": "Banamex",
+      "optionList": [
+        {
+          "optionName": "Select"
+        },
+        {
+          "optionName": "Banamex"
+        },
+        {
+          "optionName": "Option"
+        }
+      ]
+    },
+    "No de Cuenta/CLABEInput": "12345678901327896",
+    "SigningDateInput": {
+      "year": 2017,
+      "month": 12,
+      "day": 1
+    },
+    "Vin NumberInput": "12345678901327896",
+    "Engine NumberInput": "a12324",
+    "Body workInput": "1TU69 - M AVEO 4 PTAS M",
+    "Package Letter to indicate ModelInput": "M",
+    "Signature PlaceInput": "Monterrey",
+    "VendorInput": "Adrian Garza",
+    "Contract ReferenceInput": "9300",
+    "GAP Insurance NumberInput": "",
+    "Unemployment Insurance NumberInput": "",
+    "Use data for marketingCheckBoxModelId": "Use data for marketingCheckBox",
+    "Use data for marketingCheckBoxModelChecked": true,
+    "Use data for marketingCheckBoxModelName": "Yes",
+    "ReferredByRadioSelection": "ReferredByRadioSelection",
+    "ReferredByRadioSelectionModel": "ReferredBy2",
+    "ReferredByRadioList": [
+      {
+        "id": "ReferredBy1",
+        "name": "No one"
+      },
+      {
+        "id": "ReferredBy2",
+        "name": "GMF ONE"
+      },
+      {
+        "id": "ReferredBy3",
+        "name": "GMBuyPower"
+      },
+      {
+        "id": "ReferredBy4",
+        "name": "Credit Fair"
+      }
+    ],
+    "commentTextarea": "Application is ready to start the validation of the documents attached and complete next steps to be purchased",
+    
+    "DocumentsTable": [
+      {
+        "name": "",
+        "status": "",
+        "fileName": "",
+        "fileType": "",
+        "fileInputBox": []
+      },
+      {
+        "name": "Proof of address",
+        "status": "Pending",
+        "fileName": "Phone document.pdf",
+        "fileType": "",
+        "fileInputBox": []
+      },
+      {
+        "name": "ID Card Photo",
+        "status": "Approved",
+        "fileName": "ID Card Photo.jpg",
+        "fileType": "ID Card Docment Validate",
+        "fileInputBox": []
+      },
+      {
+        "name": "Invoice document 1",
+        "status": "Rejected",
+        "fileName": "Invoice document.pdf",
+        "fileType": "Illegible document",
+        "fileInputBox": []
+      }
+    ],
+    
+    "ContractTable": [
+      {
+        "name": "Closing",
+        "status": "Approved",
+        "fileName": "ID Card Photo.jpg",
+        "fileType": "ID Card Docment Validate",
+        "fileInputBox": []
+      },
+      {
+        "name": "Secure policy",
+        "status": "Pending",
+        "fileName": "pay document.pdf",
+        "fileType": "",
+        "fileInputBox": []
+      },
+      {
+        "name": "Vehicle release letter",
+        "status": "Approved",
+        "fileName": "internet_receipt.jpg",
+        "fileType": "internet receipt",
+        "fileInputBox": []
+      },
+      {
+        "name": "Contract",
+        "status": "Rejected",
+        "fileName": "Invoice document.pdf",
+        "fileType": "Illegible document",
+        "fileInputBox": []
+      },
+      {
+        "name": "Bill",
+        "status": "Approved",
+        "fileName": "internet_receipt.jpg",
+        "fileType": "internet receipt",
+        "fileInputBox": []
+      }
+    ]
+    
+  },
+  "step8Data": {
+    "HistoryTable": [
+      {
+        "Date": "24-6-2016 - 11:30",
+        "Status": "Purchased",
+        "Comments": "",
+        "Modified by": "Francisco Perez"
+      },
+      {
+        "Date": "24-6-2016 - 11:00",
+        "Status": "Held Offering",
+        "Comments": "Vin number is incorrect please review and send again",
+        "Modified by": "Francisco Perez"
+      },
+      {
+        "Date": "24-6-2016 - 10:00",
+        "Status": "Submitted to Payout",
+        "Comments": "",
+        "Modified by": "Francisco Perez"
+      },
+      {
+        "Date": "24-6-2016 - 09:00",
+        "Status": "Submit to Credit Decision",
+        "Comments": "A new Co-applicant has been added to the application please review it",
+        "Modified by": "Francisco Perez"
+      }
+    ]
+  }
+}

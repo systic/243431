@@ -1,0 +1,88 @@
+<div class="center-circle">
+  <div class="circle-tab">
+    <ul>
+      <li [ngClass]="{current: selectedTab === 'Date'}" (click)="clickTab('Date');openPopup('date-popup');$event.stopPropagation();">
+        <div class="date-tab">
+          <a href="javascript:;">
+            Date
+          </a>
+          <div class="date-pannel" [ngClass]="{hide: !(ElementGroup.showPopup && ElementGroup.shownPopupName === 'date-popup') }"
+               (click)="$event.stopPropagation();">
+            <div class="date-title clearfix">
+              <div class="date-col">
+                <div class="date-title-bar hide">
+                  <a href="javascript:;" class="icons left-arrow"></a>
+                  <span class="date-txt">June 2017</span>
+                  <a href="javascript:;" class="icons right-arrow"></a>
+                </div>
+                <div class="date-picker">
+                  <ngb-datepicker [navigation]="arrows"
+                                  [(ngModel)]="startModel" (ngModelChange)="changeStartDate()"></ngb-datepicker>
+                </div>
+              </div>
+              <div class="date-col">
+                <div class="date-title-bar hide">
+                  <a href="javascript:;" class="icons left-arrow"></a>
+                  <span class="date-txt">June 2017</span>
+                  <a href="javascript:;" class="icons right-arrow"></a>
+                </div>
+                <div class="date-picker">
+                  <ngb-datepicker [navigation]="arrows"
+                                  [(ngModel)]="endModel" (ngModelChange)="changeEndDate()"></ngb-datepicker>
+                </div>
+              </div>
+            </div>
+            <!-- end .date-title -->
+            
+            <div class="date-footer clearfix">
+              <div class="from-to">
+                <div class="item">
+                  <div class="title">From</div>
+                  <span class="inputs">
+                    <input type="text" [(ngModel)]="inputStartDay" readonly>
+                  </span>
+                </div>
+                <div class="item">
+                  <div class="title">To</div>
+                  <span class="inputs">
+                    <input type="text" [(ngModel)]="inputEndDay" readonly>
+                  </span>
+                </div>
+              </div>
+
+              <div class="btn-group">
+                <div class="btn-circle btn-gray" (click)="closePopup()">Cancel</div>
+                <div class="btn-circle btn-blue" (click)="saveFilter();closePopup()">Filter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li [ngClass]="{current: selectedTab === 'Week'}" (click)="clickTab('Week')">
+        <a href="javascript:;">This week</a>
+      </li>
+      <li [ngClass]="{current: selectedTab === 'Month'}" (click)="clickTab('Month')">
+        <a href="javascript:;">This Month</a>
+      </li>
+    </ul>
+  </div>
+  <div class="chart">
+    <div class="left-area">
+      <div class="item"  *ngFor="let item of leftLegend;let i = index">
+        {{item.status}}<span class="block block-blue{{1+i}}">{{item.number}}</span>
+      </div>
+    </div>
+    <div class="chart-img-boxs">
+      <div class="chart-img">
+        <div class="d3-chart" #chart><svg></svg></div>
+      </div>
+    </div>
+    
+    <div class="right-area">
+      <div class="item" *ngFor="let item of rightLegend;let i = index">
+        <span class="block block-blue{{5+i}}">{{item.number}}</span>{{item.status}}
+      </div>
+    </div>
+    
+  </div>
+</div>

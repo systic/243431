@@ -1,0 +1,14 @@
+<div class="dropdown dropdown-default" (click)="openDropdown(DropdownData.dropdownName);$event.stopPropagation();"
+     [ngClass]="{open: (ElementGroup['showDropdown'] && ElementGroup['shownDropdownName'] === DropdownData.dropdownName) }">
+  <a class="dropdown-txt">
+    <span class="value selected-option" *ngIf="DropdownData !== undefined">{{PreFix}}{{DropdownData.defaultText}}</span>
+    <span class="icon-arrow-down"></span>
+  </a>
+  <ul class="dropdown-menu" *ngIf="DropdownData !== undefined">
+    <li *ngFor="let option of DropdownData.optionList"
+      [ngClass]="{current: (DropdownData.defaultText === option.optionName)}">
+      <a href="javascript:;" (click)="selectDropdown(DropdownData, option.optionName)">{{option.optionName}}</a>
+    </li>
+  </ul>
+</div>
+<!-- end .dropdown-default -->

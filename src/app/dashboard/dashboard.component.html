@@ -1,0 +1,289 @@
+<app-sd-header data-ActiveMenu="Dashboard" [ElementGroup]="hiddenElementGroup" (click)="clickBody()"></app-sd-header>
+<div class="contents" (click)="clickBody()">
+  <div class="section section-app-status clearfix">
+    <div class="left-area">
+      <div class="title-module">
+        <h4 class="blue-title">Applications Status</h4>
+        <p class="grey-txt">Projection Overview</p>
+      </div>
+      <!-- end .title-module -->
+      <div class="number-boxs">
+        <div class="big-blue">
+          {{dataList.totalApplication}}
+        </div>
+        <p class="grey-txt">Total Applications</p>
+        <div class="than-boxs">
+          <i class="icon-green-trans"></i>
+          <span class="parents">{{dataList.percentage}}%</span>
+          <span class="than-txt">than last week</span>
+        </div>
+      </div>
+      <!-- end .number-boxs -->
+    </div>
+    <app-sd-pie-chart [ElementGroup]="hiddenElementGroup"></app-sd-pie-chart>
+    <div class="gray-line">
+    </div>
+  </div>
+  <!-- end .section-app-status -->
+
+  <div class="section section-dealer-queue">
+    <div class="top-bar">
+      <div class="title-module">
+        <h4 class="blue-title">Dealer Work Queue</h4>
+        <p class="grey-txt">Your Searches application records.</p>
+      </div>
+      <!-- end .title-module -->
+      <div class="right-search">
+        <div class="wrapper-boxs">
+          <app-sd-dropdown class="plus-drop" data-PreFix="Search By " [DropdownData]="searchByDropdown" [ElementGroup]="hiddenElementGroup"></app-sd-dropdown>
+          <div class="search-boxs">
+            <div class="search open">
+              <span class="inputs">
+                <a href="javascript:;" class="icon-search"></a>
+                <input type="search" placeholder="Please type keywords ..."
+                      [(ngModel)]="searchKeyword" (search)="onKeySearch($event)" (keyup)="onKeySearch($event)">
+              </span>
+              <div class="search-tip" [ngClass]="{hide: !(hiddenElementGroup.showPopup && hiddenElementGroup.shownPopupName === 'search-tip') }"
+                   (click)="$event.stopPropagation();">
+                <div class="search-content">
+                  <ul>
+                    <li *ngFor="let item of searchList" (click)="selectSearchOption(item)">
+                      <a href="javascript:;">
+                        <span>{{item.firstLabel}}</span>
+                        <span class="key-word">{{item.middleLabel}}</span>
+                        <span>{{item.lastLabel}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- end .search-tip -->
+            </div>
+            <!-- end .search -->
+          </div>
+        </div>
+      </div>
+      <!-- end .right-search -->
+    </div>
+    <!-- end .top-bar -->
+
+    <div class="table-box">
+      <table class="table">
+        <tr>
+          <th class="width11">
+            <div class="spacing">
+              <span class="tab-col">Application ID</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width12">
+            <div class="spacing">
+              <span class="tab-col">Client Name</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width11">
+            <div class="spacing">
+              <span class="tab-col">Sales Person</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width11">
+            <div class="spacing">
+              <span class="tab-col">Dealer Site</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort" (click)="openPopup('pannel-sort');$event.stopPropagation();"></a>
+                <div class="pannel-sort" [ngClass]="{hide: !(hiddenElementGroup.showPopup && hiddenElementGroup.shownPopupName === 'pannel-sort') }"
+                      (click)="$event.stopPropagation();">
+                  <div class="overflow-roll">
+                    <div class="top-sort-chose">
+                      <div class="item" [ngClass]="{active: filterOption === 'sheet A - Z'}"
+                                        (click)="filterOption = 'sheet A - Z'">
+                        Sort sheet A - Z
+                      </div>
+                      <div class="item" [ngClass]="{active: filterOption === 'sheet Z - A'}"
+                                        (click)="filterOption = 'sheet Z - A'">
+                        Sort sheet Z - A
+                      </div>
+                      <div class="item" [ngClass]="{active: filterOption === 'Randomize range'}"
+                                        (click)="filterOption = 'Randomize range'">
+                        Randomize range
+                      </div>
+                    </div>
+                    <!-- end .top-sort-chose -->
+                    <div class="choose-boxs">
+                      <div class="checkbox-wrap all-choose">
+                        <input type="checkbox" id="all" [(ngModel)]="allFilterOption" (click)="checkAllFilter()">
+                        <label for="all">All</label>
+                      </div>
+                      <div class="checkbox-wrap" *ngFor="let option of dataList.filterOptions">
+                        <input type="checkbox" id="{{option.optionId}}" [(ngModel)]="option.selected"
+                               (click)="checkFilter(option.selected)">
+                        <label for="{{option.optionId}}">{{option.optionName}}</label>
+                      </div>
+                    </div>
+                    <!-- end .choose-boxs -->
+                  </div>
+                  
+                  <div class="footer-sort">
+                    <div class="btn-circle btn-gray" (click)="closePopup()">Cancel</div>
+                    <div class="btn-circle btn-blue" (click)="closePopup()">OK</div>
+                  </div>
+                </div>
+                <!-- end .pannel-sort -->
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width7">
+            <div class="spacing">
+              <span class="tab-col">$ Loan</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+                
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width8">
+            <div class="spacing">
+              <span class="tab-col">Term</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+                
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width10">
+            <div class="spacing">
+              <span class="tab-col">Vehicle</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+                
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th class="width10">
+            <div class="spacing">
+              <span class="tab-col">Last Update</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+                
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+          <th>
+            <div class="spacing">
+              <span class="tab-col">Stage Process</span>
+              <div class="sort">
+                <a href="javascript:;" class="icon-sort"></a>
+                
+
+              </div>
+              <!-- end .sort -->
+            </div>
+          </th>
+        </tr>
+        <tr *ngFor="let row of tableData">
+          <td><div class="spacing"><a [routerLink]="['/viewApplication']">{{row.applicationID}}</a></div></td>
+          <td><div class="spacing">{{row.clientName}}</div></td>
+          <td><div class="spacing">{{row.salesPerson}}</div></td>
+          <td><div class="spacing">{{row.dealerSite}}</div></td>
+          <td><div class="spacing">{{row.loan}}</div></td>
+          <td><div class="spacing">{{row.term}}</div></td>
+          <td><div class="spacing">{{row.vehicle}}</div></td>
+          <td><div class="spacing">{{row.lastUpdate}}</div></td>
+          <td>
+            <div class="spacing">
+              <span class="txt">{{row.stageProcess}}</span>
+              <span [ngClass]="{hide: !row.actionRequired}">
+                <a href="javascript:;" class="red-warning">
+                  <span class="after-warning-txt" 
+				        (click)="openModalWindow('modal-action-required')">Action Required</span>
+                </a>
+			  </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- end .table -->
+    </div>
+    <!-- end .table-box -->
+
+    <div class="pages">
+      <div class="left-text">
+        <span class="link-show-all">
+          Showing <span>1 - 10</span> from <span>289</span> Applications
+        </span>
+      </div>
+      <div class="right-page">
+        <a href="javascript:;" class="icons btn-icon-prev disable"></a>
+        <ul>
+          <li  class="active" ><a href="javascript:;" class="link-blue">1</a></li>
+          <li><a href="javascript:;" class="link-blue">2</a></li>
+          <li><a href="javascript:;" class="link-blue"><i class="arrow-right"></i></a></li>
+        </ul>
+        <a href="javascript:;" class="icons btn-icon-next"></a>
+      </div>
+    </div>
+    <!-- end .pages -->
+  </div>
+</div>
+<!-- end .contents -->
+
+
+<div class="modal-backdrop in" [ngClass]="{hide: !showModal}"></div>
+<div class="modal modal-default" (click)="closeModalWindow()"
+ [ngClass]="{hide: !(showModal && shownModalName === 'modal-action-required') }">
+  <div class="modal-dialog" (click)="$event.stopPropagation();">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="blue-title">Action Required for T1622-82903</h4>
+        <p class="gray-txt">Application is missing documentation. Please see below!</p>
+      </div>
+      <div class="modal-body">
+        <div class="setion-pannel" [ngClass]="{open: !commentsOpen}">
+          <h4 class="pannel-titles"><a href="javascript:;" class="btn-status" (click)="commentsOpen = !commentsOpen"></a>Comments</h4>
+          <div class="pannel-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing 
+            elit. In a nibh sem. Integer mi arcu, vestibulum sit 
+            amet ullamcorper eu, feugiat in augue.
+          </div>
+          <!-- end .pannel-body -->
+        </div>
+
+        <div class="setion-pannel" [ngClass]="{open: !idVerificationOpen}">
+          <h4 class="pannel-titles"><a href="javascript:;" class="btn-status" (click)="idVerificationOpen = !idVerificationOpen"></a>ID Verification</h4>
+          <div class="pannel-body">
+            <div class="drivers-line clearfix">
+              <span class="driver-gray">Drivers License</span>
+              <a href="javascript:;" class="upload">Upload</a>
+            </div>
+          </div>
+          <!-- end .pannel-body -->
+        </div>
+
+
+      </div>
+      <div class="modal-footer clearfix">
+        <div class="btn-group">
+          <a href="javascript:;" class="btn-circle btn-gray" (click)="closeModalWindow()">Cancel</a>
+          <a href="javascript:;" class="btn-circle btn-blue" (click)="closeModalWindow()">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal -->

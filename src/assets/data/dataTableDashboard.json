@@ -1,0 +1,153 @@
+{
+  "totalApplication": 289,
+  "percentage": 29,
+  "filterOptions": [
+    {
+      "optionId": 1,
+      "optionName": "Buffalo, NY",
+      "selected": false
+    },
+    {
+      "optionId": 2,
+      "optionName": "Lubbok, TX",
+      "selected": true
+    },
+    {
+      "optionId": 3,
+      "optionName": "Albany, NY",
+      "selected": false
+    },
+    {
+      "optionId": 4,
+      "optionName": "Binghamton, NY",
+      "selected": false
+    },
+    {
+      "optionId": 5,
+      "optionName": "Albany, NY",
+      "selected": false
+    }
+  ],
+  "tableData": [
+    {
+      "applicationID": "P200-93801",
+      "clientName": "Juan Perez",
+      "salesPerson": "Jones Wild",
+      "dealerSite": "Buffalo, NY",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Awaiting Decision",
+      "actionRequired": true
+    },
+    {
+      "applicationID": "P728-29202",
+      "clientName": "Thomas A.Edison",
+      "salesPerson": "Earnest Ward",
+      "dealerSite": "Lubbock, TX",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Awaiting Decision",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "P872-18293",
+      "clientName": "Atlanta High",
+      "salesPerson": "Jones Wild",
+      "dealerSite": "Lubbock, TX",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Submitted to Payout",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "P110-18881",
+      "clientName": "Milla Kunis",
+      "salesPerson": "Jones Wild",
+      "dealerSite": "Buffalo, NY",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Held Offering",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "R762-82903",
+      "clientName": "Diane Keaton",
+      "salesPerson": "Earnest Ward",
+      "dealerSite": "Lubbock, TX",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Held Offering",
+      "actionRequired": true
+    },
+    {
+      "applicationID": "R810-18886",
+      "clientName": "Milla Kunis",
+      "salesPerson": "Albert Einstein",
+      "dealerSite": "Buffalo, NY",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Held Offering",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "S762-82903",
+      "clientName": "Mielane Diane",
+      "salesPerson": "Earnest Ward",
+      "dealerSite": "Lubbock, TX",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Qualified",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "S910-18886",
+      "clientName": "Milla Kunis",
+      "salesPerson": "Edward Jobs",
+      "dealerSite": "Buffalo, NY",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Qualified",
+      "actionRequired": true
+    },
+    {
+      "applicationID": "T162-82903",
+      "clientName": "Diane Keaton",
+      "salesPerson": "Edward Jobs",
+      "dealerSite": "Buffalo, NY",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Qualified",
+      "actionRequired": false
+    },
+    {
+      "applicationID": "L728-29202",
+      "clientName": "Thomas A.Edison",
+      "salesPerson": "Earnest Ward",
+      "dealerSite": "Lubbock, TX",
+      "loan": "$16,936",
+      "term": "48 months",
+      "vehicle": "Spark 5dr HB",
+      "lastUpdate": "Apr 15, 2017",
+      "stageProcess": "Active",
+      "actionRequired": false
+    }
+  ]
+}

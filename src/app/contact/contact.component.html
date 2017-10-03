@@ -1,0 +1,82 @@
+<app-sd-header [ElementGroup]="hiddenElementGroup" (click)="clickBody()"></app-sd-header>
+<div class="contents" (click)="clickBody()">
+  <div class="contact-section">
+    <div class="contact-content">
+      <h2>Send us a message</h2>
+      <h3>You can directly type your message below!</h3>
+      <form>
+        <div class="input-group">
+          <label>Subject <em>*</em></label>
+          <span class="inputs">
+            <input type="text" placeholder="">
+          </span>
+        </div>
+        <!--end input-group-->
+
+        <div class="input-group">
+          <label>Message <em>*</em></label>
+          <span class="inputs">
+            <input type="text" placeholder="">
+          </span>
+        </div>
+        <!--end input-group-->
+        <div class="submit-btn">
+          <a href="javascript:;" (click)="openModalWindow('modal-message-sent')">Send Message</a>
+        </div>
+      </form>
+      <!--end form-->
+    </div>
+    <!--end contact-content-->
+
+    <div class="contact-bottom">
+      <div class="contact-view">
+        <h2>Or Contact us directly!</h2>
+        <h3>These are our contact information</h3>
+        <ul class="contact-items">
+          <li>
+            <i class="icon-phone"></i>
+            <p>(808) 777 8888 999</p>
+          </li>
+          <li>
+            <i class="icon-email"></i>
+            <p>contact@gmfinancial.com</p>
+          </li>
+          <li>
+            <i class="icon-map"></i>
+            <p>123 King Street <br/>
+              Lorem Ipsum Dolor Sit Amet, CT 199200</p>
+          </li>
+        </ul>
+        <!--end .contact-items-->
+      </div>
+      <!--end .contact-view-->
+    </div>
+    <!--end .contact-bottom-->
+  </div>
+  <!--end contact-section-->
+</div>
+<!-- end .contents -->
+
+<div class="modal-backdrop in" [ngClass]="{hide: !showModal}"></div>
+<div class="modal modal-default modal-message-sent" (click)="closeModalWindow()"
+ [ngClass]="{hide: !(showModal && shownModalName === 'modal-message-sent') }">
+  <div class="modal-dialog" (click)="$event.stopPropagation();">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="icon-complete"></i>
+      </div>
+      <div class="modal-body">
+        <h4 class="blue-title">Message Sent</h4>
+        <p class="gray-txt">
+          Your message has been sent!!
+        </p>
+      </div>
+      <div class="modal-footer clearfix">
+        <div class="btn-group">
+          <a href="javascript:;" class="btn-circle btn-blue" (click)="closeModalWindow()">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal -->
